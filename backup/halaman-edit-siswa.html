@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<!-- loader-->
+	<link href="assets/css/pace.min.css" rel="stylesheet" />
+	<script src="assets/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="assets/css/app.css" rel="stylesheet">
+	<link href="assets/css/icons.css" rel="stylesheet">
+	<title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
+</head>
+
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<nav class="navbar navbar-expand-lg navbar-light bg-white rounded rounded-0 shadow-sm">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					SISTEM SKL SMKN 1 CIRUAS
+				</a>
+			</div>
+		</nav>
+		<div class="d-flex align-items-center justify-content-center">
+			<div class="container mt-5">
+				<h4 class="mb-0 text-uppercase text-center">edit data Siswa</h4>	
+				<a href="#" class="btn btn-warning px-3">Kembali</a>		
+				<a href="#" class="btn btn-danger px-5">Ganti Password</a>	
+				<hr/> 
+				<div class="card">
+					<div class="card-body">
+						<form action="" method="post">
+							<table class="table mb-0">
+								<tbody>
+									<tr>
+										<th>Nama Peserta Didik</th>
+										<th>
+											<input class="form-control" name="namasiswa" type="text" placeholder="Nama Peserta Didik">
+										</th>
+									</tr>
+									<tr>
+										<th>Tempat, Tanggal Lahir</th>
+										<th>
+											<input class="form-control" name="ttl" type="text" placeholder="Tempat, Tanggal Lahir">
+										</th>
+									</tr>
+									<tr>
+										<th>Nama Orang Tua / Wali</th>
+										<th>
+											<input class="form-control" name="wali" type="text" placeholder="Nama Orang Tua / Wali">
+										</th>
+									</tr>
+									<tr>
+										<th>Nomor Induk Siswa</th>
+										<th>
+											<input class="form-control" name="nis" type="text" placeholder="Nomor Induk Siswa">
+										</th>
+									</tr>
+									<tr>
+										<th>Nomor Induk Siswa Nasional</th>
+										<th>
+											<input class="form-control" name="nisn" type="text" placeholder=">Nomor Induk Siswa Nasional">
+										</th>
+									</tr>
+									<tr>
+										<th>Program Keahlian</th>
+										<th>
+											<input class="form-control" name="pgmkeahlian" type="text" placeholder="Program Keahlian">
+										</th>
+									</tr>
+									<tr>
+										<th>Paket Keahlian</th>
+										<th>
+											<input class="form-control" name="pktkeahlian" type="text" placeholder="Keahlian Keahlian">
+										</th>
+									</tr>
+									<tr>
+										<th>Dinyatakan</th>
+										<th>
+											<input class="form-control" name="dinyatakan" type="text" placeholder="Dinyatakan">
+										</th>
+									</tr>
+								</tbody>
+							</table>
+							<h4 class="mt-3 text-uppercase text-center">Nilai Siswa</h4>
+							<table class="table table-bordered mb-0">
+								<thead>
+									<tr>
+										<th class="text-uppercase text-center">No.</th>
+										<th class="text-uppercase text-center">Mata Pelajaran</th>
+										<th class="text-uppercase text-center">Nilai Ujian Sekolah</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th colspan="3">A. Mata Pelajaran Muatan Nasional</th>
+									</tr>
+									<tr>
+										<td class="text-center">1</td>
+										<td>Pendidikan Agama dan Budi Pekerti</td>
+										<th>
+											<input class="form-control" name="pabp" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">2</td>
+										<td>Pendidikan Pancasila dan Kewarganegaraan</td>
+										<th>
+											<input class="form-control" name="ppkn" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">3</td>
+										<td>Bahasa Indonesia</td>
+										<th>
+											<input class="form-control" name="bindo" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">4</td>
+										<td>Matematika</td>
+										<th>
+											<input class="form-control" name="mtk" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">5</td>
+										<td>Sejarah Indonesia</td>
+										<th>
+											<input class="form-control" name="sejarah" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">6</td>
+										<td>Bahasa Inggris</td>
+										<th>
+											<input class="form-control" name="inggris" type="text">
+										</th>
+									</tr>
+									<tr>
+										<th colspan="3">B. Mata Pelajaran Muatan Kewilayahan</th>
+									</tr>
+									<tr>
+										<td class="text-center">1</td>
+										<td>Seni Budaya</td>
+										<th>
+											<input class="form-control" name="senbud" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">2</td>
+										<td>Pendidikan Jasmani, Olah Raga, dan Kesehatan</td>
+										<th>
+											<input class="form-control" name="pjok" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">3</td>
+										<td>Muatan Lokal</td>
+										<td class="text-center"></td>
+									</tr>
+									<tr>
+										<td class="text-center"></td>
+										<td>A. Batik</td>
+										<th>
+											<input class="form-control" name="mulok" type="text">
+										</th>
+									</tr>
+									<tr>
+										<th colspan="3">C. Mata Pelajaran Muatan Peminatan Kejuruan</th>
+									</tr>
+									<tr>
+										<td class="text-center">1</td>
+										<td>Simulasi dan Komunikasi Digital</td>
+										<th>
+											<input class="form-control" name="sikodigital" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">2</td>
+										<td>Fisika</td>
+										<th>
+											<input class="form-control" name="fisika" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">3</td>
+										<td>Kimia</td>
+										<th>
+											<input class="form-control" name="kimia" type="text">
+										</th>
+									</tr>
+									<tr>
+										<td class="text-center">4</td>
+										<td>Dasar Program Keahlian</td>
+										<th>
+											<input class="form-control" name="dasarprogram" type="text">
+										</th>
+									</tr>
+									<tr>
+										<th colspan="2">RATA-RATA</th>
+										<th>
+											<input class="form-control" name="ratarata" type="text" placeholder="rata-rata">
+										</th>
+									</tr>
+								</tbody>
+							</table>
+							<button type="submit" class="btn btn-primary px-5 mt-3">Simpan Perubahan</button>	
+						</form>
+					</div>
+					<!--end row-->
+				</div>
+			</div>
+		</div>
+		<div class="bg-white p-3 border-top shadow">
+			<div class="d-flex align-items-center justify-content-between flex-wrap">
+				<p class="mb-0">Copyright © 2023. All right reserved.</p>
+			</div> 
+		</div>
+	</div>
+	<!-- end wrapper -->
+	<!-- Bootstrap JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
