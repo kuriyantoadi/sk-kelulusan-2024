@@ -4,7 +4,7 @@
 		
 <div class="bg-white p-3 border-top shadow">
 			<div class="d-flex align-items-center justify-content-between flex-wrap">
-				<p class="mb-0">Copyright © 2023. All right reserved.</p>
+			<p class="mb-0">Copyright © SMKN 1 Kragilan 2024. All right reserved.</p>
 			</div> 
 		</div>
 	</div>

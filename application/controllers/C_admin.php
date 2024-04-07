@@ -11,7 +11,7 @@ class C_admin extends CI_Controller
 
 		// session login
 		if ($this->session->userdata('aktif') != true) {
-			$url = base_url('C_login/f');
+			$url = base_url('Login/f');
 			redirect($url);
 		}
 	}
@@ -52,6 +52,7 @@ class C_admin extends CI_Controller
 
 	public function siswa_detail_tekno($id_siswa)
 	{
+		$data['tahun_ajaran'] = $this->M_admin->tahun_ajaran();
 		$data['tampil'] = $this->M_admin->siswa_detail_tekno($id_siswa);
 
 		$this->load->view('template/header-admin');
@@ -712,6 +713,15 @@ class C_admin extends CI_Controller
 								Edit Kelas Berhasil
 							</div>');
 		redirect('C_admin/kelas/');
+	}
+
+	public function profil_sekolah()
+	{
+		$data['profil_sekolah'] = $this->M_admin->profil_sekolah();
+
+		$this->load->view('template/header-admin');
+		$this->load->view('admin/profil_sekolah', $data);
+		$this->load->view('template/footer-admin');
 	}
 
 

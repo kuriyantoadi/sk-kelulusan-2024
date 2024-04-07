@@ -38,7 +38,7 @@
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<h4 class="logo-text">SKL 2023</h4>
+					<h4 class="logo-text">SKL 2024</h4>
 				</div>
 				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
 				</div>
@@ -61,25 +61,25 @@
 				</li>
 				<li>
 					<a href="<?= site_url('C_admin/kelas/'); ?>" >
-						<div class="parent-icon"><i class="bx bx-list-ol"></i>
+						<div class="parent-icon"><i class="bx bx-book-content"></i>
 						</div>
 						<div class="menu-title">Kelas</div>
 					</a>
 				</li>
 				<li>
 					<a href="<?= site_url('C_admin/kompetensi_keahlian/'); ?>" >
-						<div class="parent-icon"><i class="bx bx-list-check"></i>
+						<div class="parent-icon"><i class="bx bx-directions"></i>
 						</div>
 						<div class="menu-title">Kompetensi Keahlian</div>
 					</a>
 				</li>
-				<!-- <li>
-					<a href="#" target="_blank">
-						<div class="parent-icon"><i class="bx bx-support"></i>
+				<li>
+					<a href="<?= site_url('C_admin/profil_sekolah/'); ?>" >
+						<div class="parent-icon"><i class="bx bx-building-house"></i>
 						</div>
-						<div class="menu-title">Support</div>
+						<div class="menu-title">Profil Sekolah</div>
 					</a>
-				</li> -->
+				</li>
 			</ul>
 			<!--end navigation-->
 		</div>
@@ -382,7 +382,7 @@
 							<li>
 								<div class="dropdown-divider mb-0"></div>
 							</li>
-							<li><a href="<?= site_url('C_login/admin_logout/'); ?>" class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+							<li><a href="<?= site_url('Login/admin_logout/'); ?>" class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
 							</li>
 						</ul>
 					</div>

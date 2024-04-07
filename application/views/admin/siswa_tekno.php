@@ -13,7 +13,7 @@
 
 						    <a style="margin-bottom: 20px;" type="button" class="btn btn-primary btn-sm" href="<?= site_url('C_admin/siswa_tekno_tambah/') ?>" >Tambah</a>
 
-							<table id="example" class="table table-striped table-bordered" style="width:100%">
+							<table id="example" class="table table-striped table-hover" style="width:100%">
 								<thead>
 									<tr>
 										<th>No</th>

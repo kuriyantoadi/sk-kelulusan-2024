@@ -4,14 +4,14 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-white rounded rounded-0 shadow-sm">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">
-					SISTEM SKL SMKN 1 CIRUAS
+					SISTEM SKL <?= strtoupper($nama_sekolah->nama_sekolah) ?>
 				</a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent1">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item"> <a class="btn btn-danger btn-sm" aria-current="page" href="<?= site_url('C_login/logout_bismen/'); ?>"><i class='lni lni-exit me-1'></i>Log Out</a>
+						<li class="nav-item"> <a class="btn btn-danger btn-sm" aria-current="page" href="<?= site_url('Login/logout_tekno/'); ?>"><i class='lni lni-exit me-1'></i>Log Out</a>
 						</li>
 					</ul>
 				</div>
@@ -19,16 +19,14 @@
 		</nav>
 		<div class="d-flex align-items-center justify-content-center">
 			<div class="container mt-5">
-				<h4 class="mb-0 text-uppercase text-center">Tahun Ajaran 2022/2023</h4>
-				<h4 class="mb-0 text-uppercase text-center">SMKN 1 Ciruas</h4>
+				<h4 class="mb-0 text-uppercase text-center">Tahun Ajaran <?= $tahun_ajaran->tahun_awal ?>/<?= $tahun_ajaran->tahun_akhir ?></h4>
+				<h4 class="mb-0 text-uppercase text-center"><?= $nama_sekolah->nama_sekolah ?></h4>
 				<h5 class="mb-0 text-center">File Surat Keputusan Kelulusan</h5>
 									
-				<a href="<?= site_url('C_siswa/cetak_tekno') ?>" class="btn btn-success btn-sm">Unduh Surat Kelulusan</a>		
-				<p>Fitur Cetak masih tahap uji coba</p>
-
 				<hr/> 
 				<div class="card">
 					<div class="card-body">
+						<a href="<?= site_url('C_siswa/cetak_tekno') ?>" class="btn btn-success btn-sm">Unduh SKL</a>		
 						<table class="table mb-0">
 
 						    <?php
@@ -37,39 +35,39 @@
 
 							<tbody>
 								<tr>
-									<th>Nama Peserta Didik</th>
-									<th>:</th>
-									<th><?= $row->nama_siswa ?></th>
+									<td>Nama Peserta Didik</td>
+									<td>:</td>
+									<td><?= $row->nama_siswa ?></td>
 								</tr>
 								<tr>
-									<th>Tempat, Tanggal Lahir</th>
-									<th>:</th>
-									<th><?= $row->tempat_tgl_lahir ?></th>
+									<td>Tempat, Tanggal Lahir</td>
+									<td>:</td>
+        							<td><?= $row->tempat_lahir.' ,'. $row->tgl_lahir ?></td>
 								</tr>
 								<tr>
-									<th>Nama Orang Tua / Wali</th>
-									<th>:</th>
-									<th><?= $row->nama_org_tua ?></th>
+									<td>Nama Orang Tua / Wali</td>
+									<td>:</td>
+									<td><?= $row->nama_org_tua ?></td>
 								</tr>
 								<tr>
-									<th>Nomor Induk Siswa</th>
-									<th>:</th>
-									<th><?= $row->nis_siswa ?></th>
+									<td>Nomor Induk Siswa</td>
+									<td>:</td>
+									<td><?= $row->nis_siswa ?></td>
 								</tr>
 								<tr>
-									<th>Nomor Induk Siswa Nasional</th>
-									<th>:</th>
-									<th><?= $row->nisn_siswa ?></th>
+									<td>Nomor Induk Siswa Nasional</td>
+									<td>:</td>
+									<td><?= $row->nisn_siswa ?></td>
 								</tr>
 								<tr>
-									<th>Program Keahlian</th>
-									<th>:</th>
-									<th><?= $row->program_keahlian ?></th>
+									<td>Program Keahlian</td>
+									<td>:</td>
+									<td><?= $row->program_keahlian ?></td>
 								</tr>
 								<tr>
-									<th>Dinyatakan</th>
-									<th>:</th>
-									<th><?= $row->status_kelulusan ?></th>
+									<td>Dinyatakan</td>
+									<td>:</td>
+									<td><?= $row->status_kelulusan ?></td>
 								</tr>
 							</tbody>
 						</table>

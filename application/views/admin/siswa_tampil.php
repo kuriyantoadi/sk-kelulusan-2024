@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="<?= base_url() ?>C_login/admin_logout" >Logout</a>
+        <a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="<?= base_url() ?>Login/admin_logout" >Logout</a>
 
 
         <table class="table table-bordered table-hover" id="tabel_js">

@@ -11,7 +11,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent1">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item"> <a class="btn btn-danger btn-sm" aria-current="page" href="<?= site_url('C_login/logout_bismen/'); ?>"><i class='lni lni-exit me-1'></i>Log Out</a>
+						<li class="nav-item"> <a class="btn btn-danger btn-sm" aria-current="page" href="<?= site_url('Login/logout_bismen/'); ?>"><i class='lni lni-exit me-1'></i>Log Out</a>
 						</li>
 					</ul>
 				</div>

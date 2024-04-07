@@ -25,7 +25,13 @@
       <tr>
         <td>Tempat Lahir</td>
         <td>
-          <input class="form-control" type="text" name="tempat_tgl_lahir" value="<?= $row->tempat_tgl_lahir ?>" required>
+          <input class="form-control" type="text" name="tempat_lahir" value="<?= $row->tempat_lahir ?>" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Tanggal Lahir</td>
+        <td>
+          <input class="form-control" type="text" name="tgl_lahir" value="<?= $row->tgl_lahir ?>" required>
         </td>
       </tr>
       

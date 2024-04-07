@@ -50,7 +50,7 @@
 
 
 										<!-- <form class="row g-3" action="" method="post"> -->
-										<?= form_open('C_login/login_bismen'); ?>
+										<?= form_open('Login/login_bismen'); ?>
 
 											<div class="col-12">
 												<br><label for="inputNISN" class="form-label">NISN</label>
@@ -76,7 +76,7 @@
 											<div class="col-12">
 												<div class="d-grid"><br>
 													<input type="submit" class="btn btn-primary"></input>
-													<a style="margin-top: 20px" href="<?= base_url() ?>index.php/C_login/siswa_tekno" class="btn btn-secondary"><i class="bx bxs-left-arrow"></i>Login Jurusan Teknologi</a>
+													<a style="margin-top: 20px" href="<?= base_url() ?>index.php/Login/siswa_tekno" class="btn btn-secondary"><i class="bx bxs-left-arrow"></i>Login Jurusan Teknologi</a>
 												</div>
 											</div>
 

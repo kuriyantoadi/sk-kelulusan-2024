@@ -1,1 +1,0 @@
-# skl2023-smkn1ciruas

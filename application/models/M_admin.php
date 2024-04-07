@@ -39,6 +39,7 @@ class M_admin extends CI_Model{
 
   function siswa_detail_tekno($id_siswa){
     $this->db->where('id_siswa', $id_siswa);
+    $this->db->join('tb_kelas', 'tb_siswa_tekno.id_kelas = tb_kelas.id_kelas');
     $hasil = $this->db->get('tb_siswa_tekno')->result();
     return $hasil;
   }
@@ -46,6 +47,7 @@ class M_admin extends CI_Model{
   public function siswa_edit_tekno($id_siswa)
   {
     $this->db->where('id_siswa', $id_siswa);
+    $this->db->join('tb_kelas', 'tb_siswa_tekno.id_kelas = tb_kelas.id_kelas');
     $hasil = $this->db->get('tb_siswa_tekno')->result();
     return $hasil;
   }
@@ -57,9 +59,10 @@ class M_admin extends CI_Model{
 
   public function siswa_print_tekno($id_siswa)
   {
-    $this->db->where('id_siswa', $id_siswa);
-    $hasil = $this->db->get('tb_siswa_tekno')->result();
-    return $hasil;
+      $this->db->select('*, (mulok + pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + simdig + fisika + kimia + pkwu) / 13 AS nilai_rata');
+      $this->db->where('id_siswa', $id_siswa);
+      $hasil = $this->db->get('tb_siswa_tekno')->result();
+      return $hasil;
   }
 
   public function siswa_pass_tekno($id_siswa)
@@ -195,6 +198,19 @@ function kelas(){
   }
 
 // kelas akhir
+
+
+// tahun ajaran awal
+  function profil_sekolah(){
+    $this->db->select('*');
+    $this->db->from('tb_profil_sekolah');
+    $this->db->limit(1); // Hanya ambil satu baris
+    $query = $this->db->get();
+    return $query->row(); // Mengembalikan satu baris sebagai objek
+}
+
+
+// tahun ajaran akhir
 
 
 }

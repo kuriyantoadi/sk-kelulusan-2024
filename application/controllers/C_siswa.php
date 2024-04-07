@@ -8,10 +8,11 @@ class C_siswa extends CI_Controller {
 			parent::__construct();
 			$this->load->model('M_login');
       $this->load->model('M_siswa');
+      $this->load->model('M_admin');
 
       // session login
 			if ($this->session->userdata('siswa') != true) {
-				$url = base_url('C_login');
+				$url = base_url('Login');
 				redirect($url);
 			}
 	}
@@ -27,6 +28,8 @@ class C_siswa extends CI_Controller {
   {
     $ses_id = $this->session->userdata('ses_id');
     $data['tampil'] = $this->M_siswa->dashboard_tekno($ses_id);
+    $data['nama_sekolah'] = $this->M_admin->nama_sekolah();
+    $data['tahun_ajaran'] = $this->M_admin->tahun_ajaran();
 
     $this->load->view('template/header-siswa.php');
     $this->load->view('siswa_tekno/dashboard', $data);
@@ -46,7 +49,7 @@ class C_siswa extends CI_Controller {
   {
     $this->session->sess_destroy();
     $url = base_url();
-    redirect('C_login/siswa_tekno');
+    redirect('Login/siswa_tekno');
   }
   //Login Tekno Akhir
 
@@ -75,7 +78,7 @@ class C_siswa extends CI_Controller {
     {
       $this->session->sess_destroy();
       $url = base_url();
-      redirect('C_login/siswa_bismen');
+      redirect('Login/siswa_bismen');
     }
 
 }

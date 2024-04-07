@@ -55,7 +55,7 @@
       </tr>
       <tr>
         <td>Tempat, Tanggal Lahir</td>
-        <td>: <?= $row->tempat_tgl_lahir ?></td>
+        <td>: <?= $row->tempat_lahir.' ,'. $row->tgl_lahir ?></td>
       </tr>
       <tr>
         <td>Nama Orang Tua / Wali</td>
@@ -185,7 +185,7 @@
       <tr>
         <th class="pd_col text-center" colspan="2">Rata-Rata</th>
         <td ><center>
-          <?= $row->rata_rata ?>
+          <?= number_format($row->nilai_rata, 0) ?>
         </td>
       </tr>
 

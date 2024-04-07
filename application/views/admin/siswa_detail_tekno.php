@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-12">
         <center>
-          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN 2021/2022</b></h5>
+          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN <?= $tahun_ajaran->tahun_awal ?>/<?= $tahun_ajaran->tahun_akhir ?></b></h5>
         </center>
         <center>
           <h5><b>SMKN 1 KRAGILAN</b></h5>
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <td>Tempat, Tanggal Lahir</td>
-        <td>: <?= $row->tempat_tgl_lahir ?></td>
+        <td>: <?= $row->tempat_lahir.', '.$row->tgl_lahir ?></td>
       </tr>
       <tr>
         <td>Nama Orang Tua / Wali</td>
