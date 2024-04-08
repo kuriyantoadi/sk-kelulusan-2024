@@ -82,7 +82,9 @@ class M_admin extends CI_Model{
 
 //bismen awal
   function siswa_bismen(){
+    $this->db->join('tb_kelas', 'tb_siswa_bismen.id_kelas = tb_kelas.id_kelas');
     $tampil = $this->db->get('tb_siswa_bismen')->result();
+    
     return $tampil;
   }
 
@@ -99,6 +101,7 @@ class M_admin extends CI_Model{
 
   function siswa_detail_bismen($id_siswa){
     $this->db->where('id_siswa', $id_siswa);
+    $this->db->join('tb_kelas', 'tb_siswa_bismen.id_kelas = tb_kelas.id_kelas');
     $hasil = $this->db->get('tb_siswa_bismen')->result();
     return $hasil;
   }
@@ -106,6 +109,7 @@ class M_admin extends CI_Model{
   public function siswa_edit_bismen($id_siswa)
   {
     $this->db->where('id_siswa', $id_siswa);
+    $this->db->join('tb_kelas', 'tb_siswa_bismen.id_kelas = tb_kelas.id_kelas');
     $hasil = $this->db->get('tb_siswa_bismen')->result();
     return $hasil;
   }

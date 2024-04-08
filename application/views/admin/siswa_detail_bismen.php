@@ -24,7 +24,7 @@
     <?php
     foreach ($tampil as $row) {
     ?>
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_bismen') ?>" >Kembali</a>
+    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_tekno') ?>" >Kembali</a>
 
     <?php if ($row->status_kelulusan == "LULUS") { ?>
       <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_admin/siswa_print_bismen/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <td>Tempat, Tanggal Lahir</td>
-        <td>: <?= $row->tempat_tgl_lahir ?></td>
+        <td>: <?= $row->tempat_lahir.', '.$row->tgl_lahir ?></td>
       </tr>
       <tr>
         <td>Nama Orang Tua / Wali</td>
@@ -158,21 +158,19 @@
         <td class="pd_col">Kompetensi Keahlian</td>
         <td><center><?= $row->kompetensi_keahlian ?></td>
       </tr>
-      <tr>
-        <td align='center'>5</td>
-        <td class="pd_col">Produk Kreaitf dan Kewirausahaan</td>
-        <td><center><?= $row->pkwu ?></td>
-      </tr>
-
-      <tr>
-        <th class="pd_col" colspan="2">Rata-Rata</th>
+     
+     <tr>
+        <th class="pd_col text-center" colspan="2">Rata-Rata</th>
         <td ><center>
           <?= $row->rata_rata ?>
+        <!-- <?= number_format($row->nilai_rata, 0) ?> -->
         </td>
       </tr>
 
     </table>
   <?php } ?>
   </div>
+    </div>
+
   </div>
-  </div>
+

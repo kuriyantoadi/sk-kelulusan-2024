@@ -66,17 +66,7 @@
            							 } 
 								?>
 								</tbody>
-								<tfoot>
-									<tr>
-										<th>No</th>
-										<th>Nama</th>
-										<th>NISN</th>
-										<th>Tanggal Lahir</th>
-										<th>Kelas</th>
-										<th>Kondisi</th>
-										<th>Opsi</th>
-									</tr>
-								</tfoot>
+								
 							</table>
 						</div>
 					</div>

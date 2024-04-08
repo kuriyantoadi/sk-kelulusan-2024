@@ -20,7 +20,7 @@ class Login extends CI_Controller {
   //Login Siswa Tekno Awal
   public function siswa_tekno()
   {
-     $data['profil_sekolah'] = $this->M_admin->profil_sekolah();
+    $data['profil_sekolah'] = $this->M_admin->profil_sekolah();
 
     $this->load->view('login_tekno', $data);
   }
@@ -78,7 +78,9 @@ class Login extends CI_Controller {
     //Login Siswa Bismen Awal
     public function siswa_bismen()
     {
-      $this->load->view('login_bismen');
+      $data['profil_sekolah'] = $this->M_admin->profil_sekolah();
+
+      $this->load->view('login_bismen', $data);
     }
 
     public function login_bismen()

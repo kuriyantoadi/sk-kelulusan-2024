@@ -16,9 +16,16 @@
         </td>
       </tr>
       <tr>
-        <td>Tempat Lahir, Tanggal Lahir</td>
+        <td>Tempat Lahir</td>
         <td>
-          <input class="form-control" type="text" name="tempat_tgl_lahir" value="" required>
+          <input class="form-control" type="text" name="tempat_lahir" value="" required>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Tanggal Lahir</td>
+        <td>
+          <input class="form-control" type="date" name="tgl_lahir" value="" required>
         </td>
       </tr>
       
@@ -62,14 +69,14 @@
       <tr>
         <td>Kelas</td>
         <td>
-          <select class="form-control" name="nama_kelas" required>
+          <select class="form-control" name="id_kelas" required>
             <option value="">Pilihan</option>
             
              <?php
               foreach ($tampil_kelas as $row_kelas) {
               ?>
 
-            <option value="<?= $row_kelas->nama_kelas ?>"> <?= $row_kelas->nama_kelas ?></option>
+            <option value="<?= $row_kelas->id_kelas ?>"> <?= $row_kelas->nama_kelas ?></option>
            
             <?php } ?>
 

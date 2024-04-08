@@ -51,13 +51,7 @@
            							 } 
 								?>
 								</tbody>
-								<tfoot>
-									<tr>
-										<th>No</th>
-										<th>Nama Kelas</th>
-										<th>Opsi</th>
-									</tr>
-								</tfoot>
+								
 							</table>
 						</div>
 					</div>

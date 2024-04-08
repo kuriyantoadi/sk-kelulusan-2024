@@ -55,7 +55,7 @@
       </tr>
       <tr>
         <td>Tempat, Tanggal Lahir</td>
-        <td>: <?= $row->tempat_tgl_lahir ?></td>
+        <td>: <?= $row->tempat_lahir.' ,'. $row->tgl_lahir ?></td>
       </tr>
       <tr>
         <td>Nama Orang Tua / Wali</td>
@@ -177,11 +177,7 @@
         <td class="pd_col">Kompetensi Keahlian</td>
         <td><center><?= $row->kompetensi_keahlian ?></td>
       </tr>
-      <tr>
-        <td align='center'>5</td>
-        <td class="pd_col">Produk Kreatif dan Kewirausahan</td>
-        <td><center><?= $row->pkwu ?></td>
-      </tr>
+     
       <tr>
         <th class="pd_col text-center" colspan="2">Rata-Rata</th>
         <td ><center>

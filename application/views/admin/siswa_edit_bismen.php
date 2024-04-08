@@ -1,8 +1,7 @@
-  <div class="page-wrapper">
+<div class="page-wrapper">
 			<div class="page-content">
 
-  
-  <div class="container">
+<div class="container">
 
     <h3 style="margin-top: 50px; margin-bottom: 20px" align='center'>Edit Data Siswa</h3>
 
@@ -10,8 +9,8 @@
     foreach ($tampil as $row) {
     ?>
 
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_bismen') ?>" >Kembali</a>
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="<?= site_url('C_admin/siswa_pass_bismen/'. $row->id_siswa) ?>" >Ganti Password</a>
+    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_tekno/') ?>" >Kembali</a>
+    <a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="<?= site_url('C_admin/siswa_pass_tekno/'. $row->id_siswa) ?>" >Ganti Password</a>
 
     <table class="table table-bordered">
       <?= form_open('C_admin/siswa_edit_up_bismen'); ?>
@@ -24,9 +23,15 @@
         </td>
       </tr>
       <tr>
-        <td>Tempat Lahir, Tanggal Lahir</td>
+        <td>Tempat Lahir</td>
         <td>
-          <input class="form-control" type="text" name="tempat_tgl_lahir" value="<?= $row->tempat_tgl_lahir ?>" required>
+          <input class="form-control" type="text" name="tempat_lahir" value="<?= $row->tempat_lahir ?>" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Tanggal Lahir</td>
+        <td>
+          <input class="form-control" type="text" name="tgl_lahir" value="<?= $row->tgl_lahir ?>" required>
         </td>
       </tr>
       
@@ -48,7 +53,6 @@
           <input class="form-control" type="text" name="nisn_siswa" value="<?= $row->nisn_siswa ?>"required>
         </td>
       </tr>
-
       <tr>
         <td>Program Keahlian</td>
         <td>
@@ -61,7 +65,7 @@
               foreach ($tampil_komptensi as $row_komptensi) {
               ?>
 
-            <option value="nama_komptensi_keahlian"> <?= $row_komptensi->nama_kompetensi_keahlian ?></option>
+            <option value="<?= $row_komptensi->nama_kompetensi_keahlian ?>"> <?= $row_komptensi->nama_kompetensi_keahlian ?></option>
            
             <?php } ?>
 
@@ -71,26 +75,27 @@
       <tr>
         <td>Kelas</td>
         <td>
-          <select class="form-control" name="kompetensi_keahlian" required>
+          <select class="form-control" name="nama_kelas" required>
             <option value="<?= $row->nama_kelas ?>">Pilihan Sebelumnya ( <?= $row->nama_kelas ?> )</option>
             
              <?php
               foreach ($tampil_kelas as $row_kelas) {
               ?>
 
-            <option value="nama_kelas"> <?= $row_kelas->nama_kelas ?></option>
+            <option value="<?= $row_kelas->nama_kelas ?>"> <?= $row_kelas->nama_kelas ?></option>
            
             <?php } ?>
 
         </td>
       </tr>
+      
       <tr>
         <td>Dinyatakan</td>
         <td>
           <select class="form-control" name="status_kelulusan" required>
             <option value="<?= $row->status_kelulusan ?>">Pilihan Sebelumnya ( <?= $row->status_kelulusan ?>)</option>
             <option value="LULUS">LULUS</option>
-            <option value="DITUNDA">DITUNDA</option>
+            <option value="MOHON HUBUNGI KAPRODI">MOHON HUBUNGI KAPRODI</option>
           </select>
         </td>
       </tr>
@@ -167,7 +172,8 @@
           <input class="form-control" type="text" name="pjok" value="<?= $row->pjok ?>" required>
         </td>
       </tr>
-      <td align='center'>3</td>
+      <tr>
+        <td align='center'>3</td>
         <td class="pd_col" colspan='2'>Muatan Lokal </td>
         
       </tr>
@@ -178,7 +184,6 @@
           <input class="form-control" type="text" name="mulok" value="<?= $row->mulok ?>" required>
         </td>
       </tr>
-      <tr>
       <tr>
         <th class="pd_col" colspan="3">C. Mata Pelajaran Muatan Peminatan Kejuruan</th>
       </tr>
@@ -196,13 +201,14 @@
           <input class="form-control" type="text" name="ipa" value="<?= $row->ipa ?>" required>
         </td>
       </tr>
-      <tr>
-        <td align='center'>3</td>
-        <td class="pd_col">Dasar Program Keahlian</td>
-        <td>
-          <input class="form-control" type="text" name="dasar_program_keahlian" value="<?= $row->dasar_program_keahlian ?>" required>
-        </td>
+        <tr>
+          <td align='center'>3</td>
+          <td class="pd_col">Dasar Program Keahlian</td>
+          <td>
+            <input class="form-control" type="text" name="dasar_program_keahlian" value="<?= $row->dasar_program_keahlian ?>" required>
+          </td>
       </tr>
+     
       <tr>
         <td align='center'>4</td>
         <td class="pd_col">Kompetensi Keahlian</td>
@@ -210,14 +216,7 @@
           <input class="form-control" type="text" name="kompetensi_keahlian" value="<?= $row->kompetensi_keahlian ?>" required>
         </td>
       </tr>
-      </tr>
-        <tr>
-        <td align='center'>5</td>
-        <td class="pd_col">Produk Kreatif dan Kewirausahaan</td>
-        <td>
-          <input class="form-control" type="text" name="pkwu" value="<?= $row->pkwu ?>" required>
-        </td>
-      </tr>
+     
       
       <tr>
         <td align='center'></td>
@@ -240,3 +239,6 @@
 </div>
 </div>
 
+
+    </div>
+    </div>

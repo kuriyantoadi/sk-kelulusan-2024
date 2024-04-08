@@ -18,7 +18,6 @@
 										<th>No</th>
 										<th>Nama</th>
 										<th>NISN</th>
-										<th>Tanggal Lahir</th>
 										<th>Kelas</th>
 										<th>Kondisi</th>
 										<th>Opsi</th>
@@ -35,7 +34,6 @@
 										<td><?= $no++ ?></td>
 										<td> <?= $row->nama_siswa ?></td>
 										<td> <?= $row->nisn_siswa ?></td>
-										<td> <?= $row->tempat_tgl_lahir ?></td>
 										<td> <?= $row->nama_kelas ?></td>
 										<td> <?= $row->status_kelulusan ?></td>
 										<td>
@@ -67,17 +65,7 @@
            							 } 
 								?>
 								</tbody>
-								<tfoot>
-									<tr>
-										<th>No</th>
-										<th>Nama</th>
-										<th>NISN</th>
-										<th>Tanggal Lahir</th>
-										<th>Kelas</th>
-										<th>Kondisi</th>
-										<th>Opsi</th>
-									</tr>
-								</tfoot>
+								
 							</table>
 						</div>
 					</div>

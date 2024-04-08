@@ -39,8 +39,8 @@
       <div class="fadeIn first">
         <img src="<?= base_url() ?>assets/img/logo-smk.png" style="margin-top: 20px; margin-bottom: 10px" height="130px" alt="logo SMK Negeri 1 Kragilan">
         <h5 style=""><?= $profil_sekolah->nama_sekolah ?></h5>
-        <h5 style="margin-bottom: 20px;">Surat Kelulusan Tahun 2024</h5>
-        <h5  style="margin-bottom: 20px;"><span class="kedip">TJKT, PPLG, TPM dan TKRO</span></h5>
+        <h5 style="margin-bottom: 5px;">Surat Kelulusan Tahun 2024</h5>
+        <p  style="margin-bottom: 20px;"><b><span class="kedip">Login TPM, TKR, TKJ dan RPL</span></b></p>
         <?= $this->session->flashdata('msg') ?>
 
       </div>
@@ -51,6 +51,10 @@
         <input type="text" id="login" class="fadeIn second" name="nisn_siswa" placeholder="Username" required>
         <input type="password" id="login" class="fadeIn second" name="password" placeholder="Password" required>
         <input type="submit" class="fadeIn fourth" >
+        <br>
+        <!-- <a href="" style="margin-bottom: 20px" class="btn btn-sm btn-danger">Login TPM, TKR, TKJ dan RPL</a> -->
+        <a href="<?= base_url() ?>Login/siswa_bismen" style="margin-bottom: 20px" class="btn btn-sm btn-danger">Login AKL dan OTKP</a>
+        
       <?= form_close() ?>
 
       <!-- Remind Passowrd -->
