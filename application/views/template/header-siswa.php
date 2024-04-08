@@ -345,7 +345,7 @@
 						<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<img src="<?= base_url() ?>assets/images/logo-user.png" class="user-img" alt="user">
 							<div class="user-info ps-3">
-								<p class="user-name mb-0">Admin</p>
+								<p class="user-name mb-0">Siswa</p>
 								<p class="designattion mb-0">Web SKL</p>
 							</div>
 						</a>

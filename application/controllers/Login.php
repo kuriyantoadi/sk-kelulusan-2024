@@ -7,7 +7,6 @@ class Login extends CI_Controller {
 	{
 			parent::__construct();
 			$this->load->model('M_login');
-      $this->load->model('M_siswa');
 	}
 
   public function index()
