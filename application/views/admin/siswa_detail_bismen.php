@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-12">
         <center>
-          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN 2021/2022</b></h5>
+          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN <?= $profil_sekolah->tahun_ajaran_awal ?>/<?= $profil_sekolah->tahun_ajaran_akhir ?></b></h5>
         </center>
         <center>
           <h5><b>SMKN 1 KRAGILAN</b></h5>

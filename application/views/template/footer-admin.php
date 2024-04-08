@@ -6,10 +6,7 @@
 		  <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
 		<footer class="page-footer">
-			<p>Page rendered in <strong>{elapsed_time}</strong> seconds.
-			<br>Copyright © SMKN 1 Kragilan 2024. 
-			</p>
-		
+			<p>Page rendered in <strong>{elapsed_time}</strong> seconds.</p>
 		</footer>
 	</div>
 	<!--end wrapper-->

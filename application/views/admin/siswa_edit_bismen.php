@@ -17,7 +17,7 @@
       <?= form_open('C_admin/siswa_edit_up_bismen'); ?>
 
       <tr>
-        <td width="300px">Nama Peserta Didik</td>
+        <td>Nama Peserta Didik</td>
         <td >
           <input type="hidden" name="id_siswa" value="<?= $row->id_siswa ?>">
           <input class="form-control" type="text" name="nama_siswa" value="<?= $row->nama_siswa ?>" required>
