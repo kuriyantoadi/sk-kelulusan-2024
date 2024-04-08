@@ -1,12 +1,7 @@
-		</div>
-			</div>
-		</div>
-		
-<div class="bg-white p-3 border-top shadow">
-			<div class="d-flex align-items-center justify-content-between flex-wrap">
+	
+		<footer class="page-footer">
 			<p class="mb-0">Copyright © SMKN 1 Kragilan 2024. All right reserved.</p>
-			</div> 
-		</div>
+		</footer>
 	</div>
 	<!-- end wrapper -->
 	<!-- Bootstrap JS -->

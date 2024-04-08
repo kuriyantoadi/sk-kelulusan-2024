@@ -368,6 +368,7 @@
 							</li>
 						</ul>
 					</div>
+					
 					<div class="user-box dropdown">
 						<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<img src="<?= base_url() ?>assets/images/logo-user.png" class="user-img" alt="user">

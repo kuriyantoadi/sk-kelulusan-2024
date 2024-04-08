@@ -52,7 +52,7 @@ class C_admin extends CI_Controller
 
 	public function siswa_detail_tekno($id_siswa)
 	{
-		$data['tahun_ajaran'] = $this->M_admin->tahun_ajaran();
+		$data['profil_sekolah'] = $this->M_admin->profil_sekolah();
 		$data['tampil'] = $this->M_admin->siswa_detail_tekno($id_siswa);
 
 		$this->load->view('template/header-admin');

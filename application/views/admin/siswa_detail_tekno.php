@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-12">
         <center>
-          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN <?= $tahun_ajaran->tahun_awal ?>/<?= $tahun_ajaran->tahun_akhir ?></b></h5>
+          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN <?= $profil_sekolah->tahun_ajaran_awal ?>/<?= $profil_sekolah->tahun_ajaran_akhir ?></b></h5>
         </center>
         <center>
           <h5><b>SMKN 1 KRAGILAN</b></h5>
@@ -162,10 +162,10 @@
         <td class="pd_col">Produk Kreatif dan Kewirausahaan</td>
         <td><center><?= $row->pkwu ?></td>
       </tr>
-      <tr>
-        <th class="pd_col" colspan="2">Rata-Rata</th>
+     <tr>
+        <th class="pd_col text-center" colspan="2">Rata-Rata</th>
         <td ><center>
-          <?= $row->rata_rata ?>
+        <?= number_format($row->nilai_rata, 0) ?>
         </td>
       </tr>
 

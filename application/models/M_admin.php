@@ -39,6 +39,7 @@ class M_admin extends CI_Model{
 
   function siswa_detail_tekno($id_siswa){
     $this->db->where('id_siswa', $id_siswa);
+    $this->db->select('*, (mulok + pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + simdig + fisika + kimia + pkwu) / 13 AS nilai_rata');
     $this->db->join('tb_kelas', 'tb_siswa_tekno.id_kelas = tb_kelas.id_kelas');
     $hasil = $this->db->get('tb_siswa_tekno')->result();
     return $hasil;

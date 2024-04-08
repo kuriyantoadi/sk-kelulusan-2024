@@ -7,7 +7,6 @@ class C_siswa extends CI_Controller {
 	{
 			parent::__construct();
 			$this->load->model('M_login');
-      $this->load->model('M_siswa');
       $this->load->model('M_admin');
 
       // session login
@@ -27,11 +26,10 @@ class C_siswa extends CI_Controller {
   public function dashboard_tekno()
   {
     $ses_id = $this->session->userdata('ses_id');
-    $data['tampil'] = $this->M_siswa->dashboard_tekno($ses_id);
-    $data['nama_sekolah'] = $this->M_admin->nama_sekolah();
-    $data['tahun_ajaran'] = $this->M_admin->tahun_ajaran();
+    $data['tampil'] = $this->M_admin->siswa_detail_tekno($ses_id);
+    $data['profil_sekolah'] = $this->M_admin->profil_sekolah();
 
-    $this->load->view('template/header-siswa.php');
+    $this->load->view('template/header-siswa.php', $ses_id);
     $this->load->view('siswa_tekno/dashboard', $data);
     $this->load->view('template/footer-siswa.php');
   }
@@ -41,7 +39,7 @@ class C_siswa extends CI_Controller {
     $ses_id = $this->session->userdata('ses_id');
     $data['tampil'] = $this->M_siswa->dashboard_tekno($ses_id);
 
-    $this->load->view('siswa_tekno/print', $data);
+    $this->load->view('admin/print_tekno', $data);
     
   }
 
