@@ -78,7 +78,7 @@
 
     <h3 align='center'>Nilai Siswa</h3>
 
-    <table class="table table-bordered">
+    <table style="margin-bottom: 100px" class="table table-bordered">
       <tr>
         <th width="40px"><center>NO.</th>
         <th width="400px"><center>MATA PELAJARAN</th>
