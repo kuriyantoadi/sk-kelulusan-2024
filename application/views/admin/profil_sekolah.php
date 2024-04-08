@@ -50,10 +50,7 @@
 
     <center>
     <input type="submit" name="submit" value="Simpan" class="btn btn-info btn-sm">
-    <a class="btn btn-warning btn-sm" href="<?= site_url('C_admin/kelas/') ?>" >Kembali</a>
-
     
-
     </div>
 </div>
 </div>
