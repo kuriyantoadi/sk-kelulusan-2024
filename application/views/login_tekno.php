@@ -38,7 +38,7 @@
       <!-- Icon -->
       <div class="fadeIn first">
         <img src="<?= base_url() ?>assets/img/logo-smk.png" style="margin-top: 20px; margin-bottom: 10px" height="130px" alt="logo SMK Negeri 1 Kragilan">
-        <h5 style="">SMK Negeri 1 Kragilan</h5>
+        <h5 style=""><?= $profil_sekolah->nama_sekolah ?></h5>
         <h5 style="margin-bottom: 20px;">Surat Kelulusan Tahun 2024</h5>
         <h5  style="margin-bottom: 20px;"><span class="kedip">TJKT, PPLG, TPM dan TKRO</span></h5>
         <?= $this->session->flashdata('msg') ?>

@@ -1,6 +1,6 @@
 	
 		<footer class="page-footer">
-			<p class="mb-0">Copyright © SMKN 1 Kragilan 2024. All right reserved.</p>
+			<p class="mb-0">Page rendered in <strong>{elapsed_time}</strong> seconds. Copyright © SMKN 1 Kragilan 2024.</p>
 		</footer>
 	</div>
 	<!-- end wrapper -->

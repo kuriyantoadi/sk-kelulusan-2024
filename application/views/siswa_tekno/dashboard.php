@@ -4,14 +4,15 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <center>
-          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN <?= $profil_sekolah->tahun_ajaran_awal ?>/<?= $profil_sekolah->tahun_ajaran_akhir ?></b></h5>
+		<center>
+          <p><b>SMKN 1 KRAGILAN</b></p>
         </center>
         <center>
-          <h5><b>SMKN 1 KRAGILAN</b></h5>
+          <p style="margin-top:  25px;"><b>TAHUN PELAJARAN <?= $profil_sekolah->tahun_ajaran_awal ?>/<?= $profil_sekolah->tahun_ajaran_akhir ?></b></p>
         </center>
+        
         <center>
-          <h5><b>Download File Surat Keputusan Kelulusan</b></h5>
+          <p><b>Download File Surat Keputusan Kelulusan</b></p>
         </center>
         <br>
         <!-- font ganti jenis -->
@@ -21,52 +22,57 @@
     <?= $this->session->flashdata('msg') ?>
 
 
-    <?php
-    foreach ($tampil as $row) {
-    ?>
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_tekno') ?>" >Kembali</a>
+    <?php foreach ($tampil as $row) { ?>
 
     <?php if ($row->status_kelulusan == "LULUS") { ?>
-      <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_admin/siswa_print_tekno/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>
+      <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_siswa/cetak_tekno/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>
     <?php }else { ?>
       <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
     <?php } ?>
 
-    <table class="table table-bordered">
-      <tr>
-        <td width="300px">Nama Peserta Didik</td>
-        <td>: <?= $row->nama_siswa ?></td>
-      </tr>
-      <tr>
-        <td>Tempat, Tanggal Lahir</td>
-        <td>: <?= $row->tempat_lahir.', '.$row->tgl_lahir ?></td>
-      </tr>
-      <tr>
-        <td>Nama Orang Tua / Wali</td>
-        <td>: <?= $row->nama_org_tua ?></td>
-      </tr>
-      <tr>
-        <td>Nomor Induk Siswa</td>
-        <td>: <?= $row->nis_siswa ?></td>
-      </tr>
-      <tr>
-        <td>Nomor Induk Siswa Nasional</td>
-        <td>: <?= $row->nisn_siswa ?></td>
-      </tr>
-      <tr>
-        <td>Program Keahlian</td>
-        <td>: <?= $row->program_keahlian ?></td>
-      </tr>
-      <tr>
-        <td>Kelas</td>
-        <td>: <?= $row->nama_kelas ?></td>
-      </tr>
-      <tr>
-        <td>Dinyatakan</td>
-        <td>
-          <b>: <?= $row->status_kelulusan ?></b>
-        </td>
-      </tr>
+    <table class="table ">
+      <tbody>
+		<tr>
+			<td>Nama Peserta Didik</td>
+			<td>:</td>
+			<td><?= $row->nama_siswa ?></td>
+		</tr>
+		<tr>
+			<td>Tempat Lahir</td>
+			<td>:</td>
+			<td><?= $row->tempat_lahir ?></td>
+		</tr>
+		<tr>
+			<td>Tanggal Lahir</td>
+			<td>:</td>
+			<td><?= $row->tgl_lahir ?></td>
+		</tr>
+		<tr>
+			<td>Nama Orang Tua / Wali</td>
+			<td>:</td>
+			<td><?= $row->nama_org_tua ?></td>
+		</tr>
+		<tr>
+			<td>Nomor Induk Siswa</td>
+			<td>:</td>
+			<td><?= $row->nis_siswa ?></td>
+		</tr>
+		<tr>
+			<td>Nomor Induk Siswa Nasional</td>
+			<td>:</td>
+			<td><?= $row->nisn_siswa ?></td>
+		</tr>
+		<tr>
+			<td>Program Keahlian</td>
+			<td>:</td>
+			<td><?= $row->program_keahlian ?></td>
+		</tr>
+		<tr>
+			<td>Dinyatakan</td>
+			<td>:</td>
+			<td><?= $row->status_kelulusan ?></td>
+		</tr>
+	</tbody>
     </table>
 
 

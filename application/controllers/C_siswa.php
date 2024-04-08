@@ -37,7 +37,7 @@ class C_siswa extends CI_Controller {
   public function cetak_tekno()
   {
     $ses_id = $this->session->userdata('ses_id');
-    $data['tampil'] = $this->M_siswa->dashboard_tekno($ses_id);
+    $data['tampil'] = $this->M_admin->siswa_detail_tekno($ses_id);
 
     $this->load->view('admin/print_tekno', $data);
     
