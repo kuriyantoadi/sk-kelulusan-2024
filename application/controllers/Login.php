@@ -88,9 +88,6 @@ class Login extends CI_Controller {
       $nisn_siswa = htmlspecialchars($this->input->post('nisn_siswa', true), ENT_QUOTES);
       $password = htmlspecialchars($this->input->post('password', true), ENT_QUOTES);
 
-      var_dump($nisn_siswa);
-      var_dump($password);
-
       $cek_login = $this->M_login->login_bismen($nisn_siswa, $password);
 
       if ($cek_login->num_rows() > 0) {

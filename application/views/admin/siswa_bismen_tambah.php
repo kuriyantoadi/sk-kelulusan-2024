@@ -9,6 +9,25 @@
     <table class="table table-bordered">
       <?= form_open('C_admin/siswa_bismen_tambah_up'); ?>
 
+
+      <tr>
+        <td>Nomor Induk Siswa</td>
+        <td>
+          <input class="form-control" type="text" name="nis_siswa" value="" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Nomor Induk Siswa Nasional</td>
+        <td>
+          <input class="form-control" type="text" name="nisn_siswa" value="" required>
+        </td>
+      </tr>
+       <tr>
+        <td>Password</td>
+        <td>
+          <input class="form-control" type="text" name="password" value="" required>
+        </td>
+      </tr>
       <tr>
         <td width="300px">Nama Peserta Didik</td>
         <td >
@@ -35,18 +54,7 @@
           <input class="form-control" type="text" name="nama_org_tua" value="" required>
         </td>
       </tr>
-      <tr>
-        <td>Nomor Induk Siswa</td>
-        <td>
-          <input class="form-control" type="text" name="nis_siswa" value="" required>
-        </td>
-      </tr>
-      <tr>
-        <td>Nomor Induk Siswa Nasional</td>
-        <td>
-          <input class="form-control" type="text" name="nisn_siswa" value="" required>
-        </td>
-      </tr>
+      
 
       <tr>
         <td>Program Keahlian</td>

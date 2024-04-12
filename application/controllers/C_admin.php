@@ -80,6 +80,7 @@ class C_admin extends CI_Controller
 
 		$nis_siswa = $this->input->post('nis_siswa');
 		$nisn_siswa = $this->input->post('nisn_siswa');
+		$password = sha1($this->input->post('password'));
 		$nama_siswa = $this->input->post('nama_siswa');
 		$tempat_lahir = $this->input->post('tempat_lahir');
 		$nama_org_tua = $this->input->post('nama_org_tua');
@@ -106,6 +107,7 @@ class C_admin extends CI_Controller
 		$data_tambah = array(
 			'nama_siswa' => $nama_siswa,
 			'nis_siswa' => $nis_siswa,
+			'password' => $password,
 			'nisn_siswa' => $nisn_siswa,
 			'tempat_lahir' => $tempat_lahir,
 			'tgl_lahir' => $tgl_lahir,
@@ -247,7 +249,7 @@ class C_admin extends CI_Controller
 	{
 		$id_siswa = $this->input->post('id_siswa');
 		$pass = $this->input->post('password');
-		$password = md5($pass);
+		$password = sha1($pass);
 
 		$kode_siswa = array('id_siswa' => $id_siswa);
 
@@ -295,6 +297,8 @@ class C_admin extends CI_Controller
 		$id_siswa = $this->input->post('id_siswa');
 		$nis_siswa = $this->input->post('nis_siswa');
 		$nisn_siswa = $this->input->post('nisn_siswa');
+		$password = sha1($this->input->post('password'));
+
 		$nama_siswa = $this->input->post('nama_siswa');
 		$id_kelas = $this->input->post('id_kelas');
 		$tempat_lahir = $this->input->post('tempat_lahir');
@@ -489,8 +493,8 @@ class C_admin extends CI_Controller
 	public function siswa_pass_up_bismen()
 	{
 		$id_siswa = $this->input->post('id_siswa');
-		$pass = $this->input->post('password');
-		$password = md5($pass);
+		$password = sha1($this->input->post('password'));
+		// $password = sha($pass);
 
 		$kode_siswa = array('id_siswa' => $id_siswa);
 
