@@ -15,6 +15,7 @@
 									<tr>
 										<th>No</th>
 										<th>Nama Kompetensi Keahlian</th>
+										<th>Jurusan</th>
 										<th>Opsi</th>
 									</tr>
 								</thead>
@@ -28,7 +29,7 @@
 									<tr>
 										<td><?= $no++ ?></td>
 										<td> <?= $row->nama_kompetensi_keahlian ?></td>
-										
+										<td> <?= $row->jurusan ?></td>
 										<td>
 											<div class="row row-cols-auto g-1">
 												<div class="col">

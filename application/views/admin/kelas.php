@@ -28,6 +28,7 @@
 									<tr>
 										<td><?= $no++ ?></td>
 										<td> <?= $row->nama_kelas ?></td>
+										<td> <?= $row->nama_kompetensi_keahlian ?></td>
 										
 										<td>
 											<div class="row row-cols-auto g-1">

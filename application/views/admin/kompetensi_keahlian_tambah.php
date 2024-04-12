@@ -11,9 +11,19 @@
       <?= form_open('C_admin/kompetensi_keahlian_tambah_up'); ?>
 
       <tr>
-        <td width="300px">Nama Kompetensi Keahlian</td>
+        <td>Nama Kompetensi Keahlian</td>
         <td >
           <input class="form-control" type="text" name="nama_kompetensi_keahlian" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Jurusan</td>
+        <td >
+          <select name="jurusan" id="" class="form-control" required>
+            <option value="">Pilihan</option>
+            <option value="teknologi">teknologi</option>
+            <option value="bismen">bismen</option>
+          </select>
         </td>
       </tr>
       

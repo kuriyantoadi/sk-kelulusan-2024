@@ -11,9 +11,20 @@
       <?= form_open('C_admin/kelas_tambah_up'); ?>
 
       <tr>
-        <td width="300px">Nama Kelas</td>
+        <td>Nama Kelas</td>
         <td >
           <input class="form-control" type="text" name="nama_kelas" required>
+        </td>
+      </tr>
+       <tr>
+        <td>Kompetensi Keahlian</td>
+        <td >
+          <select name="id_kompetensi_keahlian" class="form-control" id="" required>
+            <?php foreach ($tampil as $row) {  ?>
+            <option value="<?= $row->id_kompetensi_keahlian ?>"><?= $row->nama_kompetensi_keahlian ?></option>
+            <?php } ?>
+          </select>
+
         </td>
       </tr>
       

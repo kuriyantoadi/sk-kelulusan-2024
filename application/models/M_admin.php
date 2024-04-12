@@ -141,10 +141,23 @@ class M_admin extends CI_Model{
 
 // kompetensi keahlian awal
 
-function kompetensi_keahlian(){
+  function kompetensi_keahlian(){
     $tampil = $this->db->get('tb_kompetensi_keahlian')->result();
     return $tampil;
   }
+
+  function kompetensi_keahlian_tekno(){
+    $this->db->where('jurusan', 'teknologi');
+    $tampil = $this->db->get('tb_kompetensi_keahlian')->result();
+    return $tampil;
+  }
+
+  function kompetensi_keahlian_bismen(){
+    $this->db->where('jurusan', 'bismen');
+    $tampil = $this->db->get('tb_kompetensi_keahlian')->result();
+    return $tampil;
+  }
+
 
   public function kompetensi_keahlian_tambah_up($data_tambah)
   {
@@ -174,10 +187,30 @@ function kompetensi_keahlian(){
 
 // kelas awal
 
-function kelas(){
+  function kelas(){
+    $this->db->join('tb_kompetensi_keahlian', 'tb_kelas.id_kompetensi_keahlian = tb_kompetensi_keahlian.id_kompetensi_keahlian');
     $tampil = $this->db->get('tb_kelas')->result();
     return $tampil;
   }
+
+  function kelas_tekno() {
+    $this->db->select('tb_kelas.id_kelas, tb_kelas.nama_kelas, tb_kelas.id_kompetensi_keahlian');
+    $this->db->from('tb_kelas');
+    $this->db->join('tb_kompetensi_keahlian', 'tb_kelas.id_kompetensi_keahlian = tb_kompetensi_keahlian.id_kompetensi_keahlian');
+    $this->db->where('tb_kompetensi_keahlian.jurusan', 'teknologi');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
+   function kelas_bismen() {
+    $this->db->select('tb_kelas.id_kelas, tb_kelas.nama_kelas, tb_kelas.id_kompetensi_keahlian');
+    $this->db->from('tb_kelas');
+    $this->db->join('tb_kompetensi_keahlian', 'tb_kelas.id_kompetensi_keahlian = tb_kompetensi_keahlian.id_kompetensi_keahlian');
+    $this->db->where('tb_kompetensi_keahlian.jurusan', 'bismen');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
 
   public function kelas_tambah_up($data_tambah)
   {
@@ -192,9 +225,14 @@ function kelas(){
 
   public function kelas_edit($id_kelas)
   {
-    $this->db->where('id_kelas', $id_kompetensi_keahlian);
-    $hasil = $this->db->get('tb_kelas')->result();
+    $this->db->select('tb_kelas.id_kelas, tb_kelas.nama_kelas, tb_kelas.id_kompetensi_keahlian, tb_kompetensi_keahlian.nama_kompetensi_keahlian, tb_kompetensi_keahlian.jurusan');
+    $this->db->from('tb_kelas');
+    $this->db->join('tb_kompetensi_keahlian', 'tb_kelas.id_kompetensi_keahlian = tb_kompetensi_keahlian.id_kompetensi_keahlian');
+    $this->db->where('tb_kelas.id_kelas', $id_kelas);
+    $hasil = $this->db->get()->result();
+
     return $hasil;
+
   }
 
   function kelas_edit_up($data_edit, $id_kelas){

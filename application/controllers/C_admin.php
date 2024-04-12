@@ -59,8 +59,10 @@ class C_admin extends CI_Controller
 
 	public function siswa_tekno_tambah()
 	{
-		$data['tampil_komptensi'] = $this->M_admin->kompetensi_keahlian();
-		$data['tampil_kelas'] = $this->M_admin->kelas();
+		$data['tampil_komptensi'] = $this->M_admin->kompetensi_keahlian_tekno();
+		$data['tampil_kelas'] = $this->M_admin->kelas_tekno();
+
+		// var_dump($data['tampil_kelas']);
 
 		$this->load->view('template/header-admin');
 		$this->load->view('admin/siswa_tekno_tambah', $data);
@@ -116,6 +118,7 @@ class C_admin extends CI_Controller
 			'id_kelas' => $id_kelas,
 			'kompetensi_keahlian' => $kompetensi_keahlian,
 			'status_kelulusan' => $status_kelulusan,
+			'status' => 'siswa',
 			'pai' => $pai,
 			'pkn' => $pkn,
 			'b_ind' => $b_ind,
@@ -277,6 +280,7 @@ class C_admin extends CI_Controller
 	{
 		// $ses_id_umkm = $this->session->userdata('ses_id');
 		$data['tampil'] = $this->M_admin->siswa_bismen();
+		$data['tampil_kelas'] = $this->M_admin->siswa_bismen();
 
 		$this->load->view('template/header-admin');
 		$this->load->view('admin/siswa_bismen', $data);
@@ -330,6 +334,7 @@ class C_admin extends CI_Controller
 			'program_keahlian' => $program_keahlian,
 			'kompetensi_keahlian' => $kompetensi_keahlian,
 			'status_kelulusan' => $status_kelulusan,
+			'status' => 'siswa',
 			'pai' => $pai,
 			'pkn' => $pkn,
 			'b_ind' => $b_ind,
@@ -357,7 +362,7 @@ class C_admin extends CI_Controller
 
 	public function siswa_bismen_tambah()
 	{
-		$data['tampil_komptensi'] = $this->M_admin->kompetensi_keahlian();
+		$data['tampil_komptensi'] = $this->M_admin->kompetensi_keahlian_bismen();
 		$data['tampil_kelas'] = $this->M_admin->kelas();
 
 		$this->load->view('template/header-admin');
@@ -534,9 +539,11 @@ class C_admin extends CI_Controller
 	public function kompetensi_keahlian_tambah_up()
 	{
 		$nama_kompetensi_keahlian = $this->input->post('nama_kompetensi_keahlian');
+		$jurusan = $this->input->post('jurusan');
 
 		$data_tambah = array(
 			'nama_kompetensi_keahlian' => $nama_kompetensi_keahlian,
+			'jurusan' => $jurusan,
 		);
 
 		$this->M_admin->kompetensi_keahlian_tambah_up($data_tambah);
@@ -577,11 +584,13 @@ class C_admin extends CI_Controller
 	{
 		$id_kompetensi_keahlian = $this->input->post('id_kompetensi_keahlian');
 		$nama_kompetensi_keahlian = $this->input->post('nama_kompetensi_keahlian');
+		$jurusan = $this->input->post('jurusan');
 
 		$id_kompetensi_keahlian = array('id_kompetensi_keahlian' => $id_kompetensi_keahlian);
 
 		$data_edit = array(
 			'nama_kompetensi_keahlian' => $nama_kompetensi_keahlian,
+			'jurusan' => $jurusan,
 		);
 
 		$this->M_admin->kompetensi_keahlian_edit_up($data_edit, $id_kompetensi_keahlian);
@@ -609,17 +618,21 @@ class C_admin extends CI_Controller
 
 	public function kelas_tambah()
 	{
+		$data['tampil'] = $this->M_admin->kompetensi_keahlian();
+
 		$this->load->view('template/header-admin');
-		$this->load->view('admin/kelas_tambah');
+		$this->load->view('admin/kelas_tambah', $data);
 		$this->load->view('template/footer-admin');
 	}
 
 	public function kelas_tambah_up()
 	{
 		$nama_kelas = $this->input->post('nama_kelas');
+		$id_kompetensi_keahlian = $this->input->post('id_kompetensi_keahlian');
 
 		$data_tambah = array(
 			'nama_kelas' => $nama_kelas,
+			'id_kompetensi_keahlian' => $id_kompetensi_keahlian,
 		);
 
 		$this->M_admin->kelas_tambah_up($data_tambah);
@@ -646,6 +659,7 @@ class C_admin extends CI_Controller
 	public function kelas_edit($id_kelas)
 	{
 		$data['tampil'] = $this->M_admin->kelas_edit($id_kelas);
+		$data['tampil_kompetensi_keahlian'] = $this->M_admin->kompetensi_keahlian();
 
 		$this->load->view('template/header-admin');
 		$this->load->view('admin/kelas_edit', $data);
@@ -656,11 +670,13 @@ class C_admin extends CI_Controller
 	{
 		$id_kelas = $this->input->post('id_kelas');
 		$nama_kelas = $this->input->post('nama_kelas');
+		$id_kompetensi_keahlian = $this->input->post('id_kompetensi_keahlian');
 
-		$id_kelas = array('id_kelasid_kelas' => $id_kelas);
+		$id_kelas = array('id_kelas' => $id_kelas);
 
 		$data_edit = array(
 			'nama_kelas' => $nama_kelas,
+			'id_kompetensi_keahlian' => $id_kompetensi_keahlian,
 		);
 
 		$this->M_admin->kelas_edit_up($data_edit, $id_kelas);

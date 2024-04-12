@@ -74,6 +74,7 @@
       <tr>
         <td>Kelas</td>
         <td>
+          <!-- <?= var_dump($tampil_kelas) ?> -->
           <select class="form-control" name="id_kelas" required>
             <option value="">Pilihan</option>
             

@@ -19,6 +19,16 @@
               <input class="form-control" type="text" value="<?= $row->nama_kompetensi_keahlian ?>" name="nama_kompetensi_keahlian" required>
         </td>
       </tr>
+      <tr>
+        <td>Jurusan</td>
+        <td >
+          <select name="jurusan" id="" class="form-control" required>
+            <option value="<?= $row->jurusan ?>">Pilihan Awal = <?= $row->jurusan ?></option>
+            <option value="teknologi">teknologi</option>
+            <option value="bismen">bismen</option>
+          </select>
+        </td>
+      </tr>
       <?php } ?>
     </table>
 
