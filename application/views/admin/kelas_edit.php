@@ -25,6 +25,7 @@
         <td >
           <select name="id_kompetensi_keahlian" class="form-control" id="" required>
             <option value="<?= $row->id_kompetensi_keahlian ?>">Pilihan Awal = <?= $row->nama_kompetensi_keahlian ?></option>
+            
             <?php foreach ($tampil_kompetensi_keahlian as $row_kompetensi) {  ?>
             <option value="<?= $row_kompetensi->id_kompetensi_keahlian ?>"><?= $row_kompetensi->nama_kompetensi_keahlian ?></option>
             <?php } ?>

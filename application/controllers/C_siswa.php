@@ -56,7 +56,7 @@ class C_siswa extends CI_Controller {
     public function dashboard_bismen()
     {
       $ses_id = $this->session->userdata('ses_id');
-      $data['tampil'] = $this->M_siswa->dashboard_bismen($ses_id);
+      $data['tampil'] = $this->M_admin->dashboard_bismen($ses_id);
 
       $this->load->view('template/header-siswa.php');
       $this->load->view('siswa_bismen/dashboard', $data);
@@ -67,7 +67,7 @@ class C_siswa extends CI_Controller {
     public function cetak_bismen()
     {
       $ses_id = $this->session->userdata('ses_id');
-      $data['tampil'] = $this->M_siswa->dashboard_bismen($ses_id);
+      $data['tampil'] = $this->M_admin->dashboard_bismen($ses_id);
 
       $this->load->view('siswa_bismen/print', $data);
     }
