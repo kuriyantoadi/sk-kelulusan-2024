@@ -160,13 +160,13 @@
       </tr>      
       <tr>
         <td align='center'>4</td>
-        <td class="pd_col">Produk Kreatif dan Kewirausahaan</td>
-        <td><center><?= $row->pkwu ?></td>
+        <td class="pd_col">Kompetensi Keahlian</td>
+        <td><center><?= $row->kompetensi_keahlian ?></td>
       </tr>
      <tr>
         <th class="pd_col text-center" colspan="2">Rata-Rata</th>
         <td ><center>
-        <?= number_format($row->nilai_rata, 0) ?>
+        <?= number_format($row->rata_rata, 0) ?>
         </td>
       </tr>
 
