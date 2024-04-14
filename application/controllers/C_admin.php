@@ -301,7 +301,7 @@ class C_admin extends CI_Controller
 		$id_siswa = $this->input->post('id_siswa');
 		$nis_siswa = $this->input->post('nis_siswa');
 		$nisn_siswa = $this->input->post('nisn_siswa');
-		$password = sha1($this->input->post('password'));
+		$password = $this->input->post('password');
 
 		$nama_siswa = $this->input->post('nama_siswa');
 		$id_kelas = $this->input->post('id_kelas');
@@ -327,7 +327,7 @@ class C_admin extends CI_Controller
 			'nama_siswa' => $nama_siswa,
 			'nis_siswa' => $nis_siswa,
 			'nisn_siswa' => $nisn_siswa,
-			'password' => $password,
+			'password' => sha1($password),
 			'tempat_lahir' => $tempat_lahir,
 			'tgl_lahir' => $tgl_lahir,
 			'id_kelas' => $id_kelas,
