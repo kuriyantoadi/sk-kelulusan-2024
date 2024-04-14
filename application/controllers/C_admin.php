@@ -327,6 +327,7 @@ class C_admin extends CI_Controller
 			'nama_siswa' => $nama_siswa,
 			'nis_siswa' => $nis_siswa,
 			'nisn_siswa' => $nisn_siswa,
+			'password' => $password,
 			'tempat_lahir' => $tempat_lahir,
 			'tgl_lahir' => $tgl_lahir,
 			'id_kelas' => $id_kelas,
