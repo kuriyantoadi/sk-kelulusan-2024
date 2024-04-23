@@ -32,10 +32,10 @@
         SURAT KETERANGAN LULUS
       </u>
     </h5>
-    <p align='center'>No. 421 / 0836 / SMKN1CRS / V / 2023</p>
+    <p align='center'>No. 421 / 0836 / SMKN1KRG / V / 2023</p>
 
     <p class="margin_p">
-      Kepala SMK Negeri 1 Ciruas Selaku Ketua Penyelenggara Ujian Sekolah Tahun Pelajaran
+      Kepala SMK Negeri 1 Kragilan Selaku Ketua Penyelenggara Ujian Sekolah Tahun Pelajaran
       2022/2023 Berdasarkan :
 
       <br>1. Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013 Revisi
