@@ -199,18 +199,19 @@
       </tr>
       <tr>
         <td align='center'>4</td>
+        <td class="pd_col">Dasar Program Keahlian</td>
+        <td>
+          <input class="form-control" type="number" name="pkwu" value="" required>
+        </td>
+      </tr>
+      <tr>
+        <td align='center'>5</td>
         <td class="pd_col">Kompetensi Keahlian</td>
         <td>
           <input class="form-control" type="number" name="kompetensi_keahlian" value="" required>
         </td>
       </tr>
-      <tr>
-        <td align='center'>5</td>
-        <td class="pd_col">Produk Kreatif dan Kewirausahaan</td>
-        <td>
-          <input class="form-control" type="number" name="pkwu" value="" required>
-        </td>
-      </tr>
+      
       
       <!-- <tr>
         <td class="pd_col" align='left' colspan="2">Rata-rata</td>

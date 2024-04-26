@@ -24,7 +24,7 @@
     <?php
     foreach ($tampil as $row) {
     ?>
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_tekno') ?>" >Kembali</a>
+    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_bismen') ?>" >Kembali</a>
 
     <?php if ($row->status_kelulusan == "LULUS") { ?>
       <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_admin/siswa_print_bismen/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>

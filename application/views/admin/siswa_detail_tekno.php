@@ -159,8 +159,8 @@
       </tr>
       <tr>
         <td align='center'>5</td>
-        <td class="pd_col">Produk Kreatif dan Kewirausahaan</td>
-        <td><center><?= $row->pkwu ?></td>
+        <td class="pd_col">Dasar Program Keahlian</td>
+        <td><center><?= $row->dasar_program_keahlian  ?></td>
       </tr>
      <tr>
         <th class="pd_col text-center" colspan="2">Rata-Rata</th>

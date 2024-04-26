@@ -32,15 +32,15 @@
         SURAT KETERANGAN LULUS
       </u>
     </h5>
-    <p align='center'>No. 421 / 0836 / SMKN1KRG / V / 2023</p>
+    <p align='center'>No. 422 / 836 / SMKN.1 / 2024</p>
 
     <p class="margin_p">
       Kepala SMK Negeri 1 Kragilan Selaku Ketua Penyelenggara Ujian Sekolah Tahun Pelajaran
-      2022/2023 Berdasarkan :
+      2023/2024 Berdasarkan :
 
       <br>1. Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013 Revisi
       <br>2. Kriteria Kelulusan dari Satuan Pendidikan sesuai dengan peraturan perundang-undangan
-      <br>3. Rapat Pleno Dewan Pendidik tentang Kelulusan pada tanggal 04 Mei 2023
+      <br>3. Rapat Pleno Dewan Pendidik tentang Kelulusan pada tanggal 03 Mei 2024
       <br>Menerangkan Bahwa :
     </p>
 
@@ -164,16 +164,26 @@
       </tr>
       <tr>
         <td align='center'>2</td>
+        <td class="pd_col">Ekonomi Bisnis</td>
+        <td><center><?= $row->ekonomi_bisnis ?></td>
+      </tr>
+      <tr>
+        <td align='center'>3</td>
+        <td class="pd_col">Administrasi Umum</td>
+        <td><center><?= $row->administrasi_umum ?></td>
+      </tr>
+       <tr>
+        <td align='center'>4</td>
         <td class="pd_col">IPA</td>
         <td><center><?= $row->ipa ?></td>
       </tr>
       <tr>
-        <td align='center'>3</td>
+        <td align='center'>5</td>
         <td class="pd_col">Dasar Program Keahlian</td>
         <td><center><?= $row->dasar_program_keahlian ?></td>
       </tr>
       <tr>
-        <td align='center'>4</td>
+        <td align='center'>6</td>
         <td class="pd_col">Kompetensi Keahlian</td>
         <td><center><?= $row->kompetensi_keahlian ?></td>
       </tr>

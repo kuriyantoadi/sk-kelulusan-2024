@@ -103,7 +103,6 @@ class C_admin extends CI_Controller
 		$kimia = $this->input->post('kimia');
 		$fisika = $this->input->post('fisika');
 		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
-		$pkwu = $this->input->post('pkwu');
 		$rata_rata = $this->input->post('rata_rata');
 
 		$data_tambah = array(
@@ -132,7 +131,6 @@ class C_admin extends CI_Controller
 			'kimia' => $kimia,
 			'fisika' => $fisika,
 			'kompetensi_keahlian' => $kompetensi_keahlian,
-			'pkwu' => $pkwu,
 			'rata_rata' => $rata_rata
 		);
 
