@@ -10,7 +10,7 @@
 
 						    <br><?= $this->session->flashdata('msg') ?>
 
-							<a style="margin-bottom: 20px;" type="button" class="btn btn-primary btn-sm" href="<?= site_url('C_admin/siswa_bismen_tambah/') ?>" >Tambah</a>
+							<a  type="button" class="mb-3 btn btn-primary btn-sm" href="<?= site_url('C_admin/siswa_bismen_tambah/') ?>" >Tambah Siswa Bismen</a>
 
 							<table id="example" class="table table-striped table-bordered" style="width:100%">
 								<thead>

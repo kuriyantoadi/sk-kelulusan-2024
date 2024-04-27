@@ -1,12 +1,17 @@
-  <div class="page-wrapper">
-			<div class="page-content">
+<div class="page-wrapper">
+  <div class="page-content">
 
-  
-  <div class="container">
+  <h6 class="mb-0 text-uppercase">Tambah Siswa Teknologi</h6>
+  <hr/>
+    
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
 
-    <h3 style="margin-top: 50px; margin-bottom: 20px" align='center'>Tambah Data Siswa</h3>
+        <div class="mb-2">
+          <a type="button" class="btn btn-secondary btn-sm" href="<?= site_url('C_admin/siswa_bismen') ?>" ><i class='bx bx-arrow-back me-0'></i>Kembali</a>
+        </div>
 
-   
     <table class="table table-bordered">
       <?= form_open('C_admin/siswa_tekno_tambah_up'); ?>
 
@@ -81,9 +86,6 @@
         </td>
       </tr>
     </table>
-
-
-    <h3 align='center' style="margin-top: 30px; margin-bottom: 20px">Nilai Siswa</h3>
 
     <table class="table table-bordered">
       <tr>
@@ -191,29 +193,28 @@
       </tr>
       <tr>
         <td align='center'>4</td>
+        <td class="pd_col">Dasar Program Keahlian</td>
+        <td>
+          <input class="form-control" type="number" name="dasar_program_keahlian" value="" required>
+        </td>
+      </tr>
+      <tr>
+        <td align='center'>5</td>
         <td class="pd_col">Kompetensi Keahlian</td>
         <td>
           <input class="form-control" type="number" name="kompetensi_keahlian" value="" required>
         </td>
       </tr>
-      <tr>
-        <td align='center'>5</td>
-        <td class="pd_col">Produk Kreatif dan Kewirausahaan</td>
-        <td>
-          <input class="form-control" type="number" name="pkwu" value="" required>
-        </td>
-      </tr>
       
      
     </table>
+      <center>
+      <input type="submit" name="submit" value="simpan" class="btn btn-primary btn-sm">
+      <?= form_close(); ?>
 
- 
-  <center>
-<input style="margin-bottom: 50px" type="submit" name="submit" value="simpan" class="btn btn-info">
-
-    <?= form_close(); ?>
-
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 

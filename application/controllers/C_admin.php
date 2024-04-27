@@ -86,9 +86,7 @@ class C_admin extends CI_Controller
 		$nama_siswa = $this->input->post('nama_siswa');
 		$tempat_lahir = $this->input->post('tempat_lahir');
 		$nama_org_tua = $this->input->post('nama_org_tua');
-		$program_keahlian = $this->input->post('program_keahlian');
 		$id_kelas = $this->input->post('id_kelas');
-		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
 		$status_kelulusan = $this->input->post('status_kelulusan');
 		$pai = $this->input->post('pai');
 		$pkn = $this->input->post('pkn');
@@ -103,7 +101,7 @@ class C_admin extends CI_Controller
 		$kimia = $this->input->post('kimia');
 		$fisika = $this->input->post('fisika');
 		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
-		$rata_rata = $this->input->post('rata_rata');
+		$dasar_program_keahlian = $this->input->post('dasar_program_keahlian');
 
 		$data_tambah = array(
 			'nama_siswa' => $nama_siswa,
@@ -113,9 +111,7 @@ class C_admin extends CI_Controller
 			'tempat_lahir' => $tempat_lahir,
 			'tgl_lahir' => $tgl_lahir,
 			'nama_org_tua' => $nama_org_tua,
-			'program_keahlian' => $program_keahlian,
 			'id_kelas' => $id_kelas,
-			'kompetensi_keahlian' => $kompetensi_keahlian,
 			'status_kelulusan' => $status_kelulusan,
 			'status' => 'siswa',
 			'pai' => $pai,
@@ -131,7 +127,7 @@ class C_admin extends CI_Controller
 			'kimia' => $kimia,
 			'fisika' => $fisika,
 			'kompetensi_keahlian' => $kompetensi_keahlian,
-			'rata_rata' => $rata_rata
+			'dasar_program_keahlian' => $dasar_program_keahlian
 		);
 
 		$this->M_admin->siswa_tekno_tambah_up($data_tambah);
@@ -179,8 +175,6 @@ class C_admin extends CI_Controller
 		$nama_siswa = $this->input->post('nama_siswa');
 		$tempat_lahir = $this->input->post('tempat_lahir');
 		$nama_org_tua = $this->input->post('nama_org_tua');
-		$program_keahlian = $this->input->post('program_keahlian');
-		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
 		$status_kelulusan = $this->input->post('status_kelulusan');
 		$pai = $this->input->post('pai');
 		$pkn = $this->input->post('pkn');
@@ -195,9 +189,7 @@ class C_admin extends CI_Controller
 		$kimia = $this->input->post('kimia');
 		$fisika = $this->input->post('fisika');
 		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
-		$pkwu = $this->input->post('pkwu');
-		$rata_rata = $this->input->post('rata_rata');
-
+		$dasar_program_keahlian = $this->input->post('dasar_program_keahlian');
 		$kode_siswa = array('id_siswa' => $id_siswa);
 
 		$data_edit = array(
@@ -207,8 +199,6 @@ class C_admin extends CI_Controller
 			'tgl_lahir' => $tgl_lahir,
 			'tempat_lahir' => $tempat_lahir,
 			'nama_org_tua' => $nama_org_tua,
-			'program_keahlian' => $program_keahlian,
-			'kompetensi_keahlian' => $kompetensi_keahlian,
 			'status_kelulusan' => $status_kelulusan,
 			'pai' => $pai,
 			'pkn' => $pkn,
@@ -223,8 +213,7 @@ class C_admin extends CI_Controller
 			'kimia' => $kimia,
 			'fisika' => $fisika,
 			'kompetensi_keahlian' => $kompetensi_keahlian,
-			'pkwu' => $pkwu,
-			'rata_rata' => $rata_rata
+			'dasar_program_keahlian' => $dasar_program_keahlian,
 		);
 
 		$this->M_admin->siswa_edit_up_tekno($data_edit, $kode_siswa);
@@ -239,7 +228,7 @@ class C_admin extends CI_Controller
 
 	public function siswa_pass_tekno($id_siswa)
 	{
-		$data['tampil'] = $this->M_admin->siswa_pass_tekno($id_siswa);
+		$data['tampil'] = $this->M_admin->siswa_detail_tekno($id_siswa);
 
 		$this->load->view('template/header-admin', $data);
 		$this->load->view('admin/siswa_pass_tekno', $data);

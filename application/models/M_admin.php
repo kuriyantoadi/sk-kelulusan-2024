@@ -58,13 +58,30 @@ class M_admin extends CI_Model{
     $this->db->update('tb_siswa_tekno',$data_edit);
   }
 
-  public function siswa_print_tekno($id_siswa)
-  {
-      $this->db->select('*, (mulok + pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + simdig + fisika + kimia + pkwu) / 13 AS nilai_rata');
-      $this->db->where('id_siswa', $id_siswa);
-      $hasil = $this->db->get('tb_siswa_tekno')->result();
-      return $hasil;
+  // public function siswa_print_tekno($id_siswa)
+  // {
+  //     $this->db->select('*, (pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + mulok + simdig + fisika + kimia + dasar_program_keahlian + kompetensi_keahlian ) / 14 AS nilai_rata');
+  //     $this->db->where('id_siswa', $id_siswa);
+  //     $hasil = $this->db->get('tb_siswa_tekno')->result();
+  //     return $hasil;
+  // }
+
+  public function siswa_print_tekno($id_siswa) {
+    $sql = "SELECT *, (pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + mulok + simdig + fisika + kimia + dasar_program_keahlian + kompetensi_keahlian) / 14 AS nilai_rata
+            FROM  `tb_siswa_tekno` 
+            JOIN `tb_kelas` ON `tb_siswa_tekno`.`id_kelas` = `tb_kelas`.`id_kelas`
+            JOIN `tb_kompetensi_keahlian` ON `tb_kelas`.`id_kompetensi_keahlian` = `tb_kompetensi_keahlian`.`id_kompetensi_keahlian`
+            WHERE `id_siswa` = $id_siswa";
+    
+    $query = $this->db->query($sql, array($id_siswa));
+    
+    if ($query->num_rows() > 0) {
+        return $query->result();
+    } else {
+        return array(); // Return an empty array if no records found
+    }
   }
+
 
   public function siswa_pass_tekno($id_siswa)
   {
@@ -138,12 +155,6 @@ class M_admin extends CI_Model{
     $this->db->update('tb_siswa_bismen',$data_edit);
   }
 
-  // public function print_bismen($id_siswa)
-  // {
-  //   $this->db->where('id_siswa', $id_siswa);
-  //   $hasil = $this->db->get('tb_siswa_bismen')->result();
-  //   return $hasil;
-  // }
 
   public function print_bismen($id_siswa) {
         $sql = "SELECT *, (pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + mulok + simdig + ekonomi_bisnis + administrasi_umum + ipa + dasar_program_keahlian + kompetensi_keahlian ) / 15 AS nilai_rata

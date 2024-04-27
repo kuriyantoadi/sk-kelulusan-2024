@@ -70,8 +70,12 @@
         <td>: <?= $row->nisn_siswa ?></td>
       </tr>
       <tr>
-        <td>Kompetensi Keahlian</td>
+        <td>Program Keahlian</td>
         <td>: <?= $row->program_keahlian ?></td>
+      </tr>
+      <tr>
+        <td>Paket Keahlian</td>
+        <td>: <?= $row->paket_keahlian ?></td>
       </tr>
       
       <tr>
@@ -172,15 +176,16 @@
         <td class="pd_col">Kimia</td>
         <td><center><?= $row->kimia ?></td>
       </tr>
+     
       <tr>
         <td align='center'>4</td>
+        <td class="pd_col">Dasar Program Keahlian</td>
+        <td><center><?= $row->dasar_program_keahlian ?></td>
+      </tr>
+       <tr>
+        <td align='center'>5</td>
         <td class="pd_col">Kompetensi Keahlian</td>
         <td><center><?= $row->kompetensi_keahlian ?></td>
-      </tr>
-      <tr>
-        <td align='center'>5</td>
-        <td class="pd_col">Produk Kreatif dan Kewirausahan</td>
-        <td><center><?= $row->pkwu ?></td>
       </tr>
       <tr>
         <th class="pd_col text-center" colspan="2">Rata-Rata</th>

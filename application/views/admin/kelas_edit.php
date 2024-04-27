@@ -1,5 +1,3 @@
-		<!--end header -->
-		<!--start page wrapper -->
 		<div class="page-wrapper">
 			<div class="page-content">
 				
@@ -17,7 +15,7 @@
                   foreach ($tampil as $row) {
                   ?>
                 <tr>
-                  <td width="300px">Nama Kelas</td>
+                  <td>Nama Kelas</td>
                   <td >
                       <input class="form-control" type="hidden" value="<?= $row->id_kelas ?>" name="id_kelas" required>
                         <input class="form-control" type="text" value="<?= $row->nama_kelas ?>" name="nama_kelas" required>
