@@ -300,13 +300,10 @@ class C_admin extends CI_Controller
 		$nis_siswa = $this->input->post('nis_siswa');
 		$nisn_siswa = $this->input->post('nisn_siswa');
 		$password = $this->input->post('password');
-
 		$nama_siswa = $this->input->post('nama_siswa');
 		$id_kelas = $this->input->post('id_kelas');
 		$tempat_lahir = $this->input->post('tempat_lahir');
 		$nama_org_tua = $this->input->post('nama_org_tua');
-		$program_keahlian = $this->input->post('program_keahlian');
-		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
 		$status_kelulusan = $this->input->post('status_kelulusan');
 		$pai = $this->input->post('pai');
 		$pkn = $this->input->post('pkn');
@@ -317,8 +314,11 @@ class C_admin extends CI_Controller
 		$sejindo = $this->input->post('sejindo');
 		$pjok = $this->input->post('pjok');
 		$simdig = $this->input->post('simdig');
+		$mulok = $this->input->post('mulok');
+		$ekonomi_bisnis = $this->input->post('ekonomi_bisnis');
+		$administrasi_umum = $this->input->post('administrasi_umum');
+		$dasar_program_keahlian = $this->input->post('dasar_program_keahlian');
 		$ipa = $this->input->post('ipa');
-		$rata_rata = $this->input->post('rata_rata');
 
 		// jika siswa bismen
 		$data_tambah = array(
@@ -330,8 +330,6 @@ class C_admin extends CI_Controller
 			'tgl_lahir' => $tgl_lahir,
 			'id_kelas' => $id_kelas,
 			'nama_org_tua' => $nama_org_tua,
-			'program_keahlian' => $program_keahlian,
-			'kompetensi_keahlian' => $kompetensi_keahlian,
 			'status_kelulusan' => $status_kelulusan,
 			'status' => 'siswa',
 			'pai' => $pai,
@@ -343,8 +341,11 @@ class C_admin extends CI_Controller
 			'sejindo' => $sejindo,
 			'pjok' => $pjok,
 			'simdig' => $simdig,
+			'mulok' => $mulok,
 			'ipa' => $ipa,
-			'rata_rata' => $rata_rata
+			'ekonomi_bisnis' => $ekonomi_bisnis,
+			'administrasi_umum' => $administrasi_umum,
+			'dasar_program_keahlian' => $dasar_program_keahlian,
 		);
 
 		$this->M_admin->siswa_bismen_tambah_up($data_tambah);
@@ -362,7 +363,7 @@ class C_admin extends CI_Controller
 	public function siswa_bismen_tambah()
 	{
 		$data['tampil_komptensi'] = $this->M_admin->kompetensi_keahlian_bismen();
-		$data['tampil_kelas'] = $this->M_admin->kelas();
+		$data['tampil_kelas'] = $this->M_admin->kelas_bismen();
 
 		$this->load->view('template/header-admin');
 		$this->load->view('admin/siswa_bismen_tambah', $data);
@@ -397,7 +398,7 @@ class C_admin extends CI_Controller
 		// $kode_masyarakat = array('id_masyarakat' => $id_masyarakat);
 		$data['tampil'] = $this->M_admin->siswa_edit_bismen($id_siswa);
 		$data['tampil_komptensi'] = $this->M_admin->kompetensi_keahlian();
-		$data['tampil_kelas'] = $this->M_admin->kelas();
+		$data['tampil_kelas'] = $this->M_admin->kelas_bismen();
 
 		$this->load->view('template/header-admin');
 		$this->load->view('admin/siswa_edit_bismen', $data);
@@ -427,8 +428,6 @@ class C_admin extends CI_Controller
 		$nama_siswa = $this->input->post('nama_siswa');
 		$tempat_lahir = $this->input->post('tempat_lahir');
 		$nama_org_tua = $this->input->post('nama_org_tua');
-		$program_keahlian = $this->input->post('program_keahlian');
-		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
 		$status_kelulusan = $this->input->post('status_kelulusan');
 		$pai = $this->input->post('pai');
 		$pkn = $this->input->post('pkn');
@@ -439,11 +438,13 @@ class C_admin extends CI_Controller
 		$sejindo = $this->input->post('sejindo');
 		$pjok = $this->input->post('pjok');
 		$mulok = $this->input->post('mulok');
-		$simdig = $this->input->post('simdig');
 		$ipa = $this->input->post('ipa');
-		// $dasar_program_keahlian = $this->input->post('dasar_program_keahlian');
+
+		$simdig = $this->input->post('simdig');
+		$ekonomi_bisnis = $this->input->post('ekonomi_bisnis');
+		$administrasi_umum = $this->input->post('administrasi_umum');
+		$dasar_program_keahlian = $this->input->post('dasar_program_keahlian');
 		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
-		$rata_rata = $this->input->post('rata_rata');
 
 		$kode_siswa = array('id_siswa' => $id_siswa);
 
@@ -454,8 +455,6 @@ class C_admin extends CI_Controller
 			'tempat_lahir' => $tempat_lahir,
 			'tgl_lahir' => $tgl_lahir,
 			'nama_org_tua' => $nama_org_tua,
-			'program_keahlian' => $program_keahlian,
-			'kompetensi_keahlian' => $kompetensi_keahlian,
 			'status_kelulusan' => $status_kelulusan,
 			'pai' => $pai,
 			'pkn' => $pkn,
@@ -466,10 +465,13 @@ class C_admin extends CI_Controller
 			'sejindo' => $sejindo,
 			'pjok' => $pjok,
 			'mulok' => $mulok,
-			'simdig' => $simdig,
 			'ipa' => $ipa,
+
+			'simdig' => $simdig,
+			'ekonomi_bisnis' => $ekonomi_bisnis,
+			'administrasi_umum' => $administrasi_umum,
 			'kompetensi_keahlian' => $kompetensi_keahlian,
-			// 'dasar_program_keahlian' => $dasar_program_keahlian,
+			'dasar_program_keahlian' => $dasar_program_keahlian,
 			'rata_rata' => $rata_rata
 
 		);
@@ -487,7 +489,7 @@ class C_admin extends CI_Controller
 
 	public function siswa_pass_bismen($id_siswa)
 	{
-		$data['tampil'] = $this->M_admin->siswa_pass_bismen($id_siswa);
+		$data['tampil'] = $this->M_admin->siswa_detail_bismen($id_siswa);
 
 		$this->load->view('template/header-admin', $data);
 		$this->load->view('admin/siswa_pass_bismen', $data);
@@ -537,11 +539,13 @@ class C_admin extends CI_Controller
 
 	public function kompetensi_keahlian_tambah_up()
 	{
-		$nama_kompetensi_keahlian = $this->input->post('nama_kompetensi_keahlian');
+		$program_keahlian = $this->input->post('program_keahlian');
+		$paket_keahlian = $this->input->post('paket_keahlian');
 		$jurusan = $this->input->post('jurusan');
 
 		$data_tambah = array(
-			'nama_kompetensi_keahlian' => $nama_kompetensi_keahlian,
+			'program_keahlian' => $program_keahlian,
+			'paket_keahlian' => $paket_keahlian,
 			'jurusan' => $jurusan,
 		);
 
@@ -582,13 +586,15 @@ class C_admin extends CI_Controller
 	public function kompetensi_keahlian_edit_up()
 	{
 		$id_kompetensi_keahlian = $this->input->post('id_kompetensi_keahlian');
-		$nama_kompetensi_keahlian = $this->input->post('nama_kompetensi_keahlian');
+		$program_keahlian = $this->input->post('program_keahlian');
+		$paket_keahlian = $this->input->post('paket_keahlian');
 		$jurusan = $this->input->post('jurusan');
 
 		$id_kompetensi_keahlian = array('id_kompetensi_keahlian' => $id_kompetensi_keahlian);
 
 		$data_edit = array(
-			'nama_kompetensi_keahlian' => $nama_kompetensi_keahlian,
+			'program_keahlian' => $program_keahlian,
+			'paket_keahlian' => $paket_keahlian,
 			'jurusan' => $jurusan,
 		);
 

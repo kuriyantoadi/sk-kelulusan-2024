@@ -24,17 +24,25 @@
     <?php
     foreach ($tampil as $row) {
     ?>
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_bismen') ?>" >Kembali</a>
 
-    <?php if ($row->status_kelulusan == "LULUS") { ?>
-      <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_admin/siswa_print_bismen/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>
-    <?php }else { ?>
-      <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
-    <?php } ?>
+    <div class="mb-2">
+
+      <a type="button" class="btn btn-secondary btn-sm" href="<?= site_url('C_admin/siswa_bismen') ?>" ><i class='bx bx-arrow-back me-0'></i></a>
+      <a href="<?= site_url('C_admin/siswa_hapus_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin menghapus data <?= $row->nama_siswa ?> ?')"><i class='bx bx-trash me-0'></i></a>
+      <a href="<?= site_url('C_admin/siswa_pass_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-warning btn-sm"><i class='bx bx-key me-0'></i></a>
+      <a href="<?= site_url('C_admin/siswa_edit_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-primary btn-sm"><i class='bx bx-pencil me-0'></i></a>
+
+      <?php if ($row->status_kelulusan == "LULUS") { ?>
+        <a type="button" class="btn btn-success btn-sm" href="<?= site_url('C_admin/siswa_print_bismen/'.$row->id_siswa); ?>" ><i class='bx bx-printer me-0'></i></a>
+      <?php }else { ?>
+        <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
+      <?php } ?>
+      
+     </div>
 
     <table class="table table-bordered">
       <tr>
-        <td width="300px">Nama Peserta Didik</td>
+        <td>Nama Peserta Didik</td>
         <td>: <?= $row->nama_siswa ?></td>
       </tr>
       <tr>
@@ -56,6 +64,10 @@
       <tr>
         <td>Program Keahlian</td>
         <td>: <?= $row->program_keahlian ?></td>
+      </tr>
+      <tr>
+        <td>Paket Keahlian</td>
+        <td>: <?= $row->paket_keahlian ?></td>
       </tr>
       <tr>
         <td>Kelas</td>
@@ -144,17 +156,28 @@
       </tr>
       <tr>
         <td align='center'>2</td>
+        <td class="pd_col">Ekonomi Bisnis</td>
+        <td><center><?= $row->ekonomi_bisnis ?></td>
+      </tr>
+      <tr>
+        <td align='center'>3</td>
+        <td class="pd_col">Administrasi Umum</td>
+        <td><center><?= $row->administrasi_umum ?></td>
+      </tr>
+
+      <tr>
+        <td align='center'>4</td>
         <td class="pd_col">IPA</td>
         <td><center><?= $row->ipa ?></td>
       </tr>
 
       <tr>
-        <td align='center'>3</td>
+        <td align='center'>5</td>
         <td class="pd_col">Dasar Program Keahlian</td>
         <td><center><?= $row->dasar_program_keahlian ?></td>
       </tr>
       <tr>
-        <td align='center'>4</td>
+        <td align='center'>6</td>
         <td class="pd_col">Kompetensi Keahlian</td>
         <td><center><?= $row->kompetensi_keahlian ?></td>
       </tr>
@@ -163,7 +186,7 @@
         <th class="pd_col text-center" colspan="2">Rata-Rata</th>
         <td ><center>
           <?= $row->rata_rata ?>
-        <!-- <?= number_format($row->nilai_rata, 0) ?> -->
+        <?= number_format($row->nilai_rata, 0) ?>
         </td>
       </tr>
 

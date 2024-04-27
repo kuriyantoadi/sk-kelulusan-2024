@@ -12,11 +12,18 @@
         <?php
         foreach ($tampil as $row) {
         ?>
+
       <tr>
-        <td width="300px">Nama Kompetensi Keahlian</td>
-        <td >
-             <input class="form-control" type="hidden" value="<?= $row->id_kompetensi_keahlian ?>" name="id_kompetensi_keahlian" required>
-              <input class="form-control" type="text" value="<?= $row->nama_kompetensi_keahlian ?>" name="nama_kompetensi_keahlian" required>
+        <td>Program Keahlian</td>
+        <td>
+          <input class="form-control" type="hidden" value="<?= $row->id_kompetensi_keahlian ?>" name="id_kompetensi_keahlian" required>
+          <input class="form-control" type="text" name="program_keahlian"  value="<?= $row->program_keahlian ?>" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Paket Keahlian</td>
+        <td>
+          <input class="form-control" type="text" name="paket_keahlian" value="<?= $row->paket_keahlian ?>" required>
         </td>
       </tr>
       <tr>

@@ -38,7 +38,22 @@
 										<td> <?= $row->status_kelulusan ?></td>
 										<td>
 											<div class="row row-cols-auto g-1">
+
 												<div class="col">
+													<a href="<?= site_url('C_admin/siswa_hapus_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-danger btn-sm" title="hapus" onclick="return confirm('Anda yakin menghapus data <?= $row->nama_siswa ?> ?')"><i class='bx bx-trash me-0'></i></a>
+												</div>
+												<div class="col">
+													<a href="<?= site_url('C_admin/siswa_pass_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-warning btn-sm" title="password"><i class='bx bx-key me-0'></i></a>
+												</div>
+												<div class="col">
+													<a href="<?= site_url('C_admin/siswa_edit_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-primary btn-sm" title="edit"><i class='bx bx-pencil me-0'></i></a>
+												</div>
+												<div class="col">
+													<a href="<?= site_url('C_admin/siswa_detail_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-info btn-sm" title="detail"><i class='bx bx-file me-0'></i></a>
+												</div>
+
+
+												<!-- <div class="col">
 													<a href="<?= site_url('C_admin/siswa_hapus_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-outline-danger"
 													onclick="return confirm('Anda yakin menghapus data <?= $row->nama_siswa ?> ?')"><i class='lni lni-trash me-0'></i>
 													</a>
@@ -50,12 +65,9 @@
 												<div class="col">
 													<a href="<?= site_url('C_admin/siswa_edit_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-outline-info"><i class='lni lni-pencil-alt me-0'></i>
 													</a>
-												</div>
+												</div> -->
 												
-												<div class="col">
-													<a href="<?= site_url('C_admin/siswa_detail_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-outline-primary"><i class='bx bx-file me-0'></i>
-													</a>
-												</div>
+												
 											</div>
 										</td>
 									</tr>

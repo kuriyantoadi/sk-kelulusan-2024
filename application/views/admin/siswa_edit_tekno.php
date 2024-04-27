@@ -53,24 +53,6 @@
           <input class="form-control" type="text" name="nisn_siswa" value="<?= $row->nisn_siswa ?>"required>
         </td>
       </tr>
-      <tr>
-        <td>Program Keahlian</td>
-        <td>
-          <!-- <input class="form-control" type="text" name="program_keahlian" value="<?= $row->program_keahlian ?>"required> -->
-
-          <select class="form-control" name="program_keahlian" required>
-            <option value="<?= $row->program_keahlian ?>">Pilihan Sebelumnya ( <?= $row->program_keahlian ?> )</option>
-            
-             <?php
-              foreach ($tampil_komptensi as $row_komptensi) {
-              ?>
-
-            <option value="<?= $row_komptensi->nama_kompetensi_keahlian ?>"> <?= $row_komptensi->nama_kompetensi_keahlian ?></option>
-           
-            <?php } ?>
-
-        </td>
-      </tr>
 
       <tr>
         <td>Kelas</td>

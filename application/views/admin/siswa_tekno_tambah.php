@@ -55,21 +55,6 @@
           <input class="form-control" type="text" name="nama_org_tua" value="" required>
         </td>
       </tr>
-     
-      <tr>
-        <td>Program Keahlian</td>
-        <td>
-          <select class="form-control" name="program_keahlian" required>
-            <option value="">Pilihan</option>
-            
-            <?php foreach ($tampil_komptensi as $row_komptensi) {  ?>
-
-            <option value="<?= $row_komptensi->nama_kompetensi_keahlian ?>"> <?= $row_komptensi->nama_kompetensi_keahlian ?></option>
-           
-            <?php } ?>
-
-        </td>
-      </tr>
 
       <tr>
         <td>Kelas</td>
@@ -113,42 +98,42 @@
         <td align='center'>1</td>
         <td class="pd_col">Pendidikan Agama dan Budi Pekerti</td>
         <td>
-          <input class="form-control" type="text" name="pai" value="" required>
+          <input class="form-control" type="number" name="pai" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>2</td>
         <td class="pd_col">Pendidikan Pancasila dan Kewarganegaraan</td>
         <td>
-          <input class="form-control" type="text" name="pkn" value="" required>
+          <input class="form-control" type="number" name="pkn" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>3</td>
         <td class="pd_col">Bahasa Indonesia</td>
         <td>
-          <input class="form-control" type="text" name="b_ind" value="" required>
+          <input class="form-control" type="number" name="b_ind" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>4</td>
         <td class="pd_col">Matematika</td>
         <td>
-          <input class="form-control" type="text" name="mtk" value="" required>
+          <input class="form-control" type="number" name="mtk" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>5</td>
         <td class="pd_col">Sejarah Indonesia</td>
         <td>
-          <input class="form-control" type="text" name="sejindo" value="" required>
+          <input class="form-control" type="number" name="sejindo" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>6</td>
         <td class="pd_col">Bahasa Inggris</td>
         <td>
-          <input class="form-control" type="text" name="b_ing" value="" required>
+          <input class="form-control" type="number" name="b_ing" value="" required>
         </td>
       </tr>
       <tr>
@@ -158,14 +143,14 @@
         <td align='center'>1</td>
         <td class="pd_col">Seni Budaya</td>
         <td>
-          <input class="form-control" type="text" name="senbud" value=""required>
+          <input class="form-control" type="number" name="senbud" value=""required>
         </td>
       </tr>
       <tr>
         <td align='center'>2</td>
         <td class="pd_col">Pendidikan Jasmani, Olah Raga, dan Kesehatan</td>
         <td>
-          <input class="form-control" type="text" name="pjok" value="" required>
+          <input class="form-control" type="number" name="pjok" value="" required>
         </td>
       </tr>
       <td align='center'>3</td>
@@ -176,7 +161,7 @@
         <td align='center'></td>
         <td class="pd_col">A. Batik</td>
         <td>
-          <input class="form-control" type="text" name="mulok" value="" required>
+          <input class="form-control" type="number" name="mulok" value="" required>
         </td>
       </tr>
       <tr>
@@ -187,45 +172,39 @@
         <td align='center'>1</td>
         <td class="pd_col">Simulasi dan Komunikasi Digital</td>
         <td>
-          <input class="form-control" type="text" name="simdig" value="" required>
+          <input class="form-control" type="number" name="simdig" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>2</td>
         <td class="pd_col">Fisika</td>
         <td>
-          <input class="form-control" type="text" name="fisika" value="" required>
+          <input class="form-control" type="number" name="fisika" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>3</td>
         <td class="pd_col">Kimia</td>
         <td>
-          <input class="form-control" type="text" name="kimia" value="" required>
+          <input class="form-control" type="number" name="kimia" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>4</td>
         <td class="pd_col">Kompetensi Keahlian</td>
         <td>
-          <input class="form-control" type="text" name="kompetensi_keahlian" value="" required>
+          <input class="form-control" type="number" name="kompetensi_keahlian" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>5</td>
         <td class="pd_col">Produk Kreatif dan Kewirausahaan</td>
         <td>
-          <input class="form-control" type="text" name="pkwu" value="" required>
+          <input class="form-control" type="number" name="pkwu" value="" required>
         </td>
       </tr>
       
-      <tr>
-        <td class="pd_col" align='left' colspan="2">Rata-rata</td>
-        <td>
-          <input class="form-control" type="text" name="rata_rata" value="" required>
-        </td>
-      </tr>
-
+     
     </table>
 
  

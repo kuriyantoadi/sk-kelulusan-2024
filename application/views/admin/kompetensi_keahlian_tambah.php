@@ -11,9 +11,15 @@
       <?= form_open('C_admin/kompetensi_keahlian_tambah_up'); ?>
 
       <tr>
-        <td>Nama Kompetensi Keahlian</td>
+        <td>Program Keahlian</td>
         <td >
-          <input class="form-control" type="text" name="nama_kompetensi_keahlian" required>
+          <input class="form-control" type="text" name="program_keahlian" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Paket Keahlian</td>
+        <td >
+          <input class="form-control" type="text" name="paket_keahlian" required>
         </td>
       </tr>
       <tr>

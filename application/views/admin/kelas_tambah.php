@@ -17,11 +17,11 @@
         </td>
       </tr>
        <tr>
-        <td>Kompetensi Keahlian</td>
+        <td>Paket_keahlian</td>
         <td >
           <select name="id_kompetensi_keahlian" class="form-control" id="" required>
             <?php foreach ($tampil as $row) {  ?>
-            <option value="<?= $row->id_kompetensi_keahlian ?>"><?= $row->nama_kompetensi_keahlian ?></option>
+            <option value="<?= $row->id_kompetensi_keahlian ?>"><?= $row->paket_keahlian ?></option>
             <?php } ?>
           </select>
 

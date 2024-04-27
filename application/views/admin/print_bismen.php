@@ -55,7 +55,7 @@
       </tr>
       <tr>
         <td>Tempat, Tanggal Lahir</td>
-        <td>: <?= $row->tempat_lahir.' ,'. $row->tgl_lahir ?></td>
+        <td>: <?= $row->tempat_lahir.', '. $row->tgl_lahir ?></td>
       </tr>
       <tr>
         <td>Nama Orang Tua / Wali</td>
@@ -70,8 +70,12 @@
         <td>: <?= $row->nisn_siswa ?></td>
       </tr>
       <tr>
-        <td>Kompetensi Keahlian</td>
+        <td>Program Keahlian</td>
         <td>: <?= $row->program_keahlian ?></td>
+      </tr>
+      <tr>
+        <td>Paket Keahlian</td>
+        <td>: <?= $row->paket_keahlian ?></td>
       </tr>
       
       <tr>

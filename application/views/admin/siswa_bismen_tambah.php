@@ -29,8 +29,8 @@
         </td>
       </tr>
       <tr>
-        <td width="300px">Nama Peserta Didik</td>
-        <td >
+        <td>Nama Peserta Didik</td>
+        <td>
           <input class="form-control" type="text" name="nama_siswa" value="" required>
         </td>
       </tr>
@@ -52,25 +52,6 @@
         <td>Nama Orang Tua / Wali</td>
         <td>
           <input class="form-control" type="text" name="nama_org_tua" value="" required>
-        </td>
-      </tr>
-      
-
-      <tr>
-        <td>Program Keahlian</td>
-        <td>
-
-          <select class="form-control" name="program_keahlian" required>
-            <option value="">Pilihan</option>
-            
-             <?php
-              foreach ($tampil_komptensi as $row_komptensi) {
-              ?>
-
-            <option value="<?= $row_komptensi->nama_kompetensi_keahlian ?>"> <?= $row_komptensi->nama_kompetensi_keahlian ?></option>
-           
-            <?php } ?>
-
         </td>
       </tr>
 
@@ -112,123 +93,122 @@
         <th width="200px"><center>NILAI UJIAN SEKOLAH</th>
       </tr>
       <tr>
-        <th class="pd_col" colspan="3">A. Mata Pelajaran Muatan Nasional</th>
+        <th colspan="3">A. Mata Pelajaran Muatan Nasional</th>
       </tr>
       <tr>
         <td align='center'>1</td>
-        <td class="pd_col">Pendidikan Agama dan Budi Pekerti</td>
+        <td>Pendidikan Agama dan Budi Pekerti</td>
         <td>
-          <input class="form-control" type="text" name="pai" value="" required>
+          <input class="form-control" type="number" name="pai" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>2</td>
-        <td class="pd_col">Pendidikan Pancasila dan Kewarganegaraan</td>
+        <td>Pendidikan Pancasila dan Kewarganegaraan</td>
         <td>
-          <input class="form-control" type="text" name="pkn" value="" required>
+          <input class="form-control" type="number" name="pkn" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>3</td>
-        <td class="pd_col">Bahasa Indonesia</td>
+        <td>Bahasa Indonesia</td>
         <td>
-          <input class="form-control" type="text" name="b_ind" value="" required>
+          <input class="form-control" type="number" name="b_ind" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>4</td>
-        <td class="pd_col">Matematika</td>
+        <td>Matematika</td>
         <td>
-          <input class="form-control" type="text" name="mtk" value="" required>
+          <input class="form-control" type="number" name="mtk" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>5</td>
-        <td class="pd_col">Sejarah Indonesia</td>
+        <td>Sejarah Indonesia</td>
         <td>
-          <input class="form-control" type="text" name="sejindo" value="" required>
+          <input class="form-control" type="number" name="sejindo" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>6</td>
-        <td class="pd_col">Bahasa Inggris</td>
+        <td>Bahasa Inggris</td>
         <td>
-          <input class="form-control" type="text" name="b_ing" value="" required>
+          <input class="form-control" type="number" name="b_ing" value="" required>
         </td>
       </tr>
       <tr>
-        <th class="pd_col" colspan="3">B. Mata Pelajaran Muatan Kewilayahan</th>
+        <th colspan="3">B. Mata Pelajaran Muatan Kewilayahan</th>
       </tr>
       <tr>
         <td align='center'>1</td>
-        <td class="pd_col">Seni Budaya</td>
+        <td>Seni Budaya</td>
         <td>
-          <input class="form-control" type="text" name="senbud" value="" required>
+          <input class="form-control" type="number" name="senbud" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>2</td>
-        <td class="pd_col">Pendidikan Jasmani, Olah Raga, dan Kesehatan</td>
+        <td>Pendidikan Jasmani, Olah Raga, dan Kesehatan</td>
         <td>
-          <input class="form-control" type="text" name="pjok" value="" required>
+          <input class="form-control" type="number" name="pjok" value="" required>
         </td>
       </tr>
       <td align='center'>3</td>
-        <td class="pd_col" colspan='2'>Muatan Lokal </td>
+        <td colspan='2'>Muatan Lokal </td>
         
       </tr>
       <tr>
         <td align='center'></td>
-        <td class="pd_col">A. Batik</td>
+        <td>A. Batik</td>
         <td>
-          <input class="form-control" type="text" name="mulok" value="" required>
+          <input class="form-control" type="number" name="mulok" value="" required>
         </td>
       </tr>
       <tr>
       <tr>
-        <th class="pd_col" colspan="3">C. Mata Pelajaran Muatan Peminatan Kejuruan</th>
+        <th colspan="3">C. Mata Pelajaran Muatan Peminatan Kejuruan</th>
       </tr>
       <tr>
         <td align='center'>1</td>
-        <td class="pd_col">Simulasi dan Komunikasi Digital</td>
+        <td>Simulasi dan Komunikasi Digital</td>
         <td>
-          <input class="form-control" type="text" name="simdig" value="" required>
+          <input class="form-control" type="number" name="simdig" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>2</td>
-        <td class="pd_col">IPA</td>
+        <td>Ekonomi Bisnis</td>
         <td>
-          <input class="form-control" type="text" name="ipa" value="" required>
+          <input class="form-control" type="number" name="ekonomi_bisnis" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>3</td>
-        <td class="pd_col">Dasar Program Keahlian</td>
+        <td>Administrasi Umum</td>
         <td>
-          <input class="form-control" type="text" name="dasar_program_keahlian" value="" required>
+          <input class="form-control" type="number" name="administrasi_umum" value="" required>
         </td>
       </tr>
       <tr>
         <td align='center'>4</td>
-        <td class="pd_col">Kompetensi Keahlian</td>
+        <td>IPA</td>
         <td>
-          <input class="form-control" type="text" name="kompetensi_keahlian" value="" required>
+          <input class="form-control" type="number" name="ipa" value="" required>
         </td>
       </tr>
-        <tr>
-        <td align='center'>5</td>
-        <td class="pd_col">Produk Kreatif dan Kewirausahaan</td>
-        <td>
-          <input class="form-control" type="text" name="pkwu" value="" required>
-        </td>
-      </tr>
-      
       <tr>
-        <td align='center'></td>
-        <td class="pd_col">Rata-rata</td>
+        <td align='center'>5</td>
+        <td>Dasar Program Keahlian</td>
         <td>
-          <input class="form-control" type="text" name="rata_rata" value="" required>
+          <input class="form-control" type="number" name="dasar_program_keahlian" value="" required>
+        </td>
+      </tr>
+      <tr>
+        <td align='center'>6</td>
+        <td>Kompetensi Keahlian</td>
+        <td>
+          <input class="form-control" type="number" name="kompetensi_keahlian" value="" required>
         </td>
       </tr>
 
@@ -236,7 +216,7 @@
     </table>
 
   <center>
-<input style="margin-bottom: 50px" type="submit" name="submit" value="simpan" class="btn btn-info">
+<input style="margin-bottom: 50px" type="submit" name="submit" value="simpan" class="btn btn-primary">
 
     <?= form_close(); ?>
 

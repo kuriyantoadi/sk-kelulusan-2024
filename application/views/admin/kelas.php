@@ -15,6 +15,10 @@
 									<tr>
 										<th>No</th>
 										<th>Nama Kelas</th>
+										<th>Program Keahlian</th>
+										<th>Paket Keahlian</th>
+										<th>Jurusan</th>
+
 										<th>Opsi</th>
 									</tr>
 								</thead>
@@ -28,7 +32,9 @@
 									<tr>
 										<td><?= $no++ ?></td>
 										<td> <?= $row->nama_kelas ?></td>
-										<td> <?= $row->nama_kompetensi_keahlian ?></td>
+										<td> <?= $row->program_keahlian ?></td>
+										<td> <?= $row->paket_keahlian ?></td>
+										<td> <?= $row->jurusan ?></td>
 										
 										<td>
 											<div class="row row-cols-auto g-1">

@@ -9,8 +9,20 @@
     foreach ($tampil as $row) {
     ?>
 
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= site_url('C_admin/siswa_tekno/') ?>" >Kembali</a>
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="<?= site_url('C_admin/siswa_pass_tekno/'. $row->id_siswa) ?>" >Ganti Password</a>
+    <div class="mb-2">
+
+      <a type="button" class="btn btn-secondary btn-sm" href="<?= site_url('C_admin/siswa_bismen') ?>" ><i class='bx bx-arrow-back me-0'></i></a>
+      <a href="<?= site_url('C_admin/siswa_hapus_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin menghapus data <?= $row->nama_siswa ?> ?')"><i class='bx bx-trash me-0'></i></a>
+      <a href="<?= site_url('C_admin/siswa_pass_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-warning btn-sm"><i class='bx bx-key me-0'></i></a>
+			<a href="<?= site_url('C_admin/siswa_detail_bismen/'.$row->id_siswa); ?>" type="button" class="btn btn-info btn-sm" title="detail"><i class='bx bx-file me-0'></i></a>
+
+      <?php if ($row->status_kelulusan == "LULUS") { ?>
+        <a type="button" class="btn btn-success btn-sm" href="<?= site_url('C_admin/siswa_print_bismen/'.$row->id_siswa); ?>" ><i class='bx bx-printer me-0'></i></a>
+      <?php }else { ?>
+        <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
+      <?php } ?>
+      
+    </div>
 
     <table class="table table-bordered">
       <?= form_open('C_admin/siswa_edit_up_bismen'); ?>
@@ -53,25 +65,7 @@
           <input class="form-control" type="text" name="nisn_siswa" value="<?= $row->nisn_siswa ?>"required>
         </td>
       </tr>
-      <tr>
-        <td>Program Keahlian</td>
-        <td>
-          <!-- <input class="form-control" type="text" name="program_keahlian" value="<?= $row->program_keahlian ?>"required> -->
-
-          <select class="form-control" name="program_keahlian" required>
-            <option value="<?= $row->program_keahlian ?>">Pilihan Sebelumnya ( <?= $row->program_keahlian ?> )</option>
-            
-             <?php
-              foreach ($tampil_komptensi as $row_komptensi) {
-              ?>
-
-            <option value="<?= $row_komptensi->nama_kompetensi_keahlian ?>"> <?= $row_komptensi->nama_kompetensi_keahlian ?></option>
-           
-            <?php } ?>
-
-        </td>
-      </tr>
-
+      
       <tr>
         <td>Kelas</td>
         <td>
@@ -111,122 +105,126 @@
         <th width="200px"><center>NILAI UJIAN SEKOLAH</th>
       </tr>
       <tr>
-        <th class="pd_col" colspan="3">A. Mata Pelajaran Muatan Nasional</th>
+        <th colspan="3">A. Mata Pelajaran Muatan Nasional</th>
       </tr>
       <tr>
         <td align='center'>1</td>
-        <td class="pd_col">Pendidikan Agama dan Budi Pekerti</td>
+        <td>Pendidikan Agama dan Budi Pekerti</td>
         <td>
-          <input class="form-control" type="text" name="pai" value="<?= $row->pai ?>" required>
+          <input class="form-control" type="number" name="pai" value="<?= $row->pai ?>" required>
         </td>
       </tr>
       <tr>
         <td align='center'>2</td>
-        <td class="pd_col">Pendidikan Pancasila dan Kewarganegaraan</td>
+        <td>Pendidikan Pancasila dan Kewarganegaraan</td>
         <td>
-          <input class="form-control" type="text" name="pkn" value="<?= $row->pkn ?>" required>
+          <input class="form-control" type="number" name="pkn" value="<?= $row->pkn ?>" required>
         </td>
       </tr>
       <tr>
         <td align='center'>3</td>
-        <td class="pd_col">Bahasa Indonesia</td>
+        <td>Bahasa Indonesia</td>
         <td>
-          <input class="form-control" type="text" name="b_ind" value="<?= $row->b_ind ?>" required>
+          <input class="form-control" type="number" name="b_ind" value="<?= $row->b_ind ?>" required>
         </td>
       </tr>
       <tr>
         <td align='center'>4</td>
-        <td class="pd_col">Matematika</td>
+        <td>Matematika</td>
         <td>
-          <input class="form-control" type="text" name="mtk" value="<?= $row->mtk ?>" required>
+          <input class="form-control" type="number" name="mtk" value="<?= $row->mtk ?>" required>
         </td>
       </tr>
       <tr>
         <td align='center'>5</td>
-        <td class="pd_col">Sejarah Indonesia</td>
+        <td>Sejarah Indonesia</td>
         <td>
-          <input class="form-control" type="text" name="sejindo" value="<?= $row->sejindo ?>" required>
+          <input class="form-control" type="number" name="sejindo" value="<?= $row->sejindo ?>" required>
         </td>
       </tr>
       <tr>
         <td align='center'>6</td>
-        <td class="pd_col">Bahasa Inggris</td>
+        <td>Bahasa Inggris</td>
         <td>
-          <input class="form-control" type="text" name="b_ing" value="<?= $row->b_ing ?>" required>
+          <input class="form-control" type="number" name="b_ing" value="<?= $row->b_ing ?>" required>
         </td>
       </tr>
       <tr>
-        <th class="pd_col" colspan="3">B. Mata Pelajaran Muatan Kewilayahan</th>
+        <th colspan="3">B. Mata Pelajaran Muatan Kewilayahan</th>
       </tr>
       <tr>
         <td align='center'>1</td>
-        <td class="pd_col">Seni Budaya</td>
+        <td>Seni Budaya</td>
         <td>
-          <input class="form-control" type="text" name="senbud" value="<?= $row->senbud ?>"required>
+          <input class="form-control" type="number" name="senbud" value="<?= $row->senbud ?>"required>
         </td>
       </tr>
       <tr>
         <td align='center'>2</td>
-        <td class="pd_col">Pendidikan Jasmani, Olah Raga, dan Kesehatan</td>
+        <td>Pendidikan Jasmani, Olah Raga, dan Kesehatan</td>
         <td>
-          <input class="form-control" type="text" name="pjok" value="<?= $row->pjok ?>" required>
+          <input class="form-control" type="number" name="pjok" value="<?= $row->pjok ?>" required>
         </td>
       </tr>
       <tr>
         <td align='center'>3</td>
-        <td class="pd_col" colspan='2'>Muatan Lokal </td>
+        <td colspan='2'>Muatan Lokal </td>
         
       </tr>
       <tr>
         <td align='center'></td>
-        <td class="pd_col">A. Batik</td>
+        <td>A. Batik</td>
         <td>
-          <input class="form-control" type="text" name="mulok" value="<?= $row->mulok ?>" required>
+          <input class="form-control" type="number" name="mulok" value="<?= $row->mulok ?>" required>
         </td>
       </tr>
       <tr>
-        <th class="pd_col" colspan="3">C. Mata Pelajaran Muatan Peminatan Kejuruan</th>
+        <th colspan="3">C. Mata Pelajaran Muatan Peminatan Kejuruan</th>
       </tr>
       <tr>
         <td align='center'>1</td>
-        <td class="pd_col">Simulasi dan Komunikasi Digital</td>
+        <td>Simulasi dan Komunikasi Digital</td>
         <td>
-          <input class="form-control" type="text" name="simdig" value="<?= $row->simdig ?>" required>
+          <input class="form-control" type="number" name="simdig" value="<?= $row->simdig ?>" required>
+        </td>
+      </tr>
+       <tr>
+        <td align='center'>2</td>
+        <td>IPA</td>
+        <td>
+          <input class="form-control" type="number" name="ekonomi_bisnis" value="<?= $row->ekonomi_bisnis ?>" required>
+        </td>
+      </tr>
+       <tr>
+        <td align='center'>3</td>
+        <td>Administrasi Umum</td>
+        <td>
+          <input class="form-control" type="number" name="administrasi_umum" value="<?= $row->administrasi_umum ?>" required>
         </td>
       </tr>
       <tr>
-        <td align='center'>2</td>
-        <td class="pd_col">IPA</td>
+        <td align='center'>4</td>
+        <td>IPA</td>
         <td>
-          <input class="form-control" type="text" name="ipa" value="<?= $row->ipa ?>" required>
+          <input class="form-control" type="number" name="ipa" value="<?= $row->ipa ?>" required>
         </td>
       </tr>
-        <tr>
-          <td align='center'>3</td>
-          <td class="pd_col">Dasar Program Keahlian</td>
+      <tr>
+          <td align='center'>5</td>
+          <td>Dasar Program Keahlian</td>
           <td>
-            <input class="form-control" type="text" name="dasar_program_keahlian" value="<?= $row->dasar_program_keahlian ?>" required>
+            <input class="form-control" type="number" name="dasar_program_keahlian" value="<?= $row->dasar_program_keahlian ?>" required>
           </td>
       </tr>
      
       <tr>
-        <td align='center'>4</td>
-        <td class="pd_col">Kompetensi Keahlian</td>
+        <td align='center'>6</td>
+        <td>Kompetensi Keahlian</td>
         <td>
-          <input class="form-control" type="text" name="kompetensi_keahlian" value="<?= $row->kompetensi_keahlian ?>" required>
+          <input class="form-control" type="number" name="kompetensi_keahlian" value="<?= $row->kompetensi_keahlian ?>" required>
         </td>
       </tr>
-     
       
-      <tr>
-        <td align='center'></td>
-        <td class="pd_col">Rata-rata</td>
-        <td>
-          <input class="form-control" type="text" name="rata_rata" value="<?= $row->rata_rata ?>" required>
-        </td>
-      </tr>
-
-
     </table>
 
   <?php } ?>
