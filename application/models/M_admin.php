@@ -266,7 +266,7 @@ class M_admin extends CI_Model{
 
   public function kelas_edit($id_kelas)
   {
-    $this->db->select('tb_kelas.id_kelas, tb_kelas.nama_kelas, tb_kelas.id_kompetensi_keahlian, tb_kompetensi_keahlian.nama_kompetensi_keahlian, tb_kompetensi_keahlian.jurusan');
+    $this->db->select('tb_kelas.id_kelas, tb_kelas.nama_kelas, tb_kelas.id_kompetensi_keahlian, tb_kompetensi_keahlian.paket_keahlian, tb_kompetensi_keahlian.program_keahlian');
     $this->db->from('tb_kelas');
     $this->db->join('tb_kompetensi_keahlian', 'tb_kelas.id_kompetensi_keahlian = tb_kompetensi_keahlian.id_kompetensi_keahlian');
     $this->db->where('tb_kelas.id_kelas', $id_kelas);

@@ -17,7 +17,7 @@
         </td>
       </tr>
        <tr>
-        <td>Paket_keahlian</td>
+        <td>Paket Keahlian</td>
         <td >
           <select name="id_kompetensi_keahlian" class="form-control" id="" required>
             <?php foreach ($tampil as $row) {  ?>
