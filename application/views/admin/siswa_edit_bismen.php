@@ -25,79 +25,63 @@
             
           </div>
 
-          <table class="table table-bordered">
             <?= form_open('C_admin/siswa_edit_up_bismen'); ?>
 
-            <tr>
-              <td>Nama Peserta Didik</td>
-              <td >
-                <input type="hidden" name="id_siswa" value="<?= $row->id_siswa ?>">
-                <input class="form-control" type="text" name="nama_siswa" value="<?= $row->nama_siswa ?>" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Tempat Lahir</td>
-              <td>
+            <div class="mb-3">
+              <label class="form-label">Nama Peserta Didik :</label>
+              <input type="hidden" name="id_siswa" value="<?= $row->id_siswa ?>">
+              <input class="form-control" type="text" name="nama_siswa" value="<?= $row->nama_siswa ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tempat Lahir :</label>
                 <input class="form-control" type="text" name="tempat_lahir" value="<?= $row->tempat_lahir ?>" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Tanggal Lahir</td>
-              <td>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tanggal Lahir :</label>
                 <input class="form-control" type="text" name="tgl_lahir" value="<?= $row->tgl_lahir ?>" required>
-              </td>
-            </tr>
-            
-            <tr>
-              <td>Nama Orang Tua / Wali</td>
-              <td>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nama Orang Tua / Wali :</label>
                 <input class="form-control" type="text" name="nama_org_tua" value="<?= $row->nama_org_tua ?>" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Nomor Induk Siswa</td>
-              <td>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nomor Induk Siswa :</label>
                 <input class="form-control" type="text" name="nis_siswa" value="<?= $row->nis_siswa ?>" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Nomor Induk Siswa Nasional</td>
-              <td>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">Nomor Induk Siswa Nasional :</label>
                 <input class="form-control" type="text" name="nisn_siswa" value="<?= $row->nisn_siswa ?>"required>
-              </td>
-            </tr>
-            
-            <tr>
-              <td>Kelas</td>
-              <td>
-                <select class="form-control" name="nama_kelas" required>
-                  <option value="<?= $row->nama_kelas ?>">Pilihan Sebelumnya ( <?= $row->nama_kelas ?> )</option>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Kelas :</label>
+
+                <select style="width: 300px;" class="form-control" name="id_kelas" required>
+                  <option value="<?= $row->id_kelas ?>">Pilihan Sebelumnya ( <?= $row->nama_kelas ?> )</option>
                   
-                  <?php
-                    foreach ($tampil_kelas as $row_kelas) {
-                    ?>
+                  <?php foreach ($tampil_kelas as $row_kelas) { ?>
 
-                  <option value="<?= $row_kelas->nama_kelas ?>"> <?= $row_kelas->nama_kelas ?></option>
-                
+                  <option value="<?= $row_kelas->id_kelas ?>"> <?= $row_kelas->nama_kelas ?></option>
+              
                   <?php } ?>
-
-              </td>
-            </tr>
+                  </select>
+            </div>
             
-            <tr>
-              <td>Dinyatakan</td>
-              <td>
-                <select class="form-control" name="status_kelulusan" required>
+            <div class="mb-3">
+                <label class="form-label">Dinyatakan :</label>
+                
+               <select style="width: 300px;" class="form-control" name="status_kelulusan" required>
                   <option value="<?= $row->status_kelulusan ?>">Pilihan Sebelumnya ( <?= $row->status_kelulusan ?>)</option>
                   <option value="LULUS">LULUS</option>
                   <option value="MOHON HUBUNGI KAPRODI">MOHON HUBUNGI KAPRODI</option>
                 </select>
-              </td>
-            </tr>
-          </table>
-
-
-          <h3 align='center' style="margin-top: 30px; margin-bottom: 20px">Edit Nilai Siswa</h3>
+            </div>
 
           <table class="table table-bordered">
             <tr>
