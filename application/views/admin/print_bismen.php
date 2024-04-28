@@ -205,7 +205,7 @@
       <tr>
         <th class="pd_col text-center" colspan="2">Rata-Rata</th>
         <td ><center>
-          <?= $row->rata_rata ?>
+            <?= number_format($row->nilai_rata, 2) ?>
         </td>
       </tr>
 

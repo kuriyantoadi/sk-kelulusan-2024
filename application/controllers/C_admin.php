@@ -11,14 +11,14 @@ class C_admin extends CI_Controller
 
 		// session login
 		if ($this->session->userdata('aktif') != true) {
-			$url = base_url('Login/f');
+			$url = base_url('Login/fa');
 			redirect($url);
 		}
 	}
 
 	public function index()
 	{
-		$this->load->view('C_admin/f');
+		$this->load->view('C_admin/fa');
 	}
 
 

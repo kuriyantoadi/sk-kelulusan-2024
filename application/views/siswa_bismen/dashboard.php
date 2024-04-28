@@ -14,7 +14,7 @@
               <?php foreach ($tampil as $row) { ?>
 
               <?php if ($row->status_kelulusan == "LULUS") { ?>
-                <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_siswa/cetak_bismen/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>
+                <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_siswa/cetak_bismen/'.$row->id_siswa); ?>" >Download Surat Kelulusan<i class='bx bx-cloud-download m-1'></i></a>
               <?php }else { ?>
                 <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
               <?php } ?>
@@ -163,7 +163,6 @@
               <tr>
                   <th class="pd_col text-center" colspan="2">Rata-Rata</th>
                   <td ><center>
-                    <?= $row->rata_rata ?>
                   <?= number_format($row->nilai_rata, 2) ?>
                   </td>
                 </tr>
