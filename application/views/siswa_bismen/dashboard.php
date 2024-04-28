@@ -64,7 +64,7 @@
 
             <h5>Nilai Siswa</h5>
 
-              <table style="margin-bottom: 100px" class="table table-bordered">
+              <table style="margin-bottom: 100px" class="table table-bordered table-hover">
                 <tr>
                   <th width="40px"><center>NO.</th>
                   <th width="400px"><center>MATA PELAJARAN</th>
