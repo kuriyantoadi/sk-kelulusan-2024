@@ -115,7 +115,7 @@
             </tr>
             <tr>
               <td align='center'>3</td>
-              <td class="pd_col">Muatan Lokal</td>
+              <td class="pd_col" colspan='2'>Muatan Lokal</td>
             </tr>
             <tr>
               <td align='center'></td>

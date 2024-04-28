@@ -18,6 +18,20 @@
       margin-left: 150px;
       margin-right: 100px;
     }
+
+    
+    @media print {
+        /* A4 landscape */
+        @page {
+            size: F4 portrait;
+        }
+        
+        /* A4 portrait */
+        /* @page {
+            size: A4 portrait;
+        } */
+    }
+  
   </style>
 </head>
 <body>
@@ -27,10 +41,8 @@
 </center>
 
   <div class="container">
-    <h5 style="margin-top:20px;" align='center'>
-      <u>
-        SURAT KETERANGAN LULUS
-      </u>
+    <h5 style="margin-top:10px;" align='center'>
+      <u>SURAT KETERANGAN LULUS</u>
     </h5>
     <p align='center'>No. 422 / 836 / SMKN.1 / 2024</p>
 
@@ -44,9 +56,7 @@
       <br>Menerangkan Bahwa :
     </p>
 
-    <?php
-    foreach ($tampil as $row) {
-    ?>
+    <?php foreach ($tampil as $row) { ?>
 
     <table class="margin_tb" border="0">
       <tr>

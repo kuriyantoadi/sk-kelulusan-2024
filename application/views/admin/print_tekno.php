@@ -18,6 +18,20 @@
       margin-left: 150px;
       margin-right: 100px;
     }
+
+
+    @media print {
+        /* A4 landscape */
+        @page {
+            size: F4 portrait;
+        }
+        
+        /* A4 portrait */
+        /* @page {
+            size: A4 portrait;
+        } */
+    }
+  
   </style>
 </head>
 <body>
