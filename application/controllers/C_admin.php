@@ -337,6 +337,8 @@ class C_admin extends CI_Controller
 			'ekonomi_bisnis' => $ekonomi_bisnis,
 			'administrasi_umum' => $administrasi_umum,
 			'dasar_program_keahlian' => $dasar_program_keahlian,
+			'kompetensi_keahlian' => $kompetensi_keahlian,
+
 		);
 
 		$this->M_admin->siswa_bismen_tambah_up($data_tambah);
