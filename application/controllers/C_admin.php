@@ -302,12 +302,14 @@ class C_admin extends CI_Controller
 		$senbud = $this->input->post('senbud');
 		$sejindo = $this->input->post('sejindo');
 		$pjok = $this->input->post('pjok');
-		$simdig = $this->input->post('simdig');
 		$mulok = $this->input->post('mulok');
+
+		$simdig = $this->input->post('simdig');	
 		$ekonomi_bisnis = $this->input->post('ekonomi_bisnis');
 		$administrasi_umum = $this->input->post('administrasi_umum');
-		$dasar_program_keahlian = $this->input->post('dasar_program_keahlian');
 		$ipa = $this->input->post('ipa');
+		$dasar_program_keahlian = $this->input->post('dasar_program_keahlian');
+		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
 
 		// jika siswa bismen
 		$data_tambah = array(
