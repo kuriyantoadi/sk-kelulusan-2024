@@ -24,36 +24,28 @@
                 
             </div>
 
-
             <?= form_open('C_admin/siswa_pass_up_bismen'); ?>
 
-            <table class="table table-bordered">
-              <tr>
-                <td>Nama Peserta Didik</td>
-                <td >
+              <div class="mb-3">
+                  <label class="form-label">Nama Peserta Didik :</label>
                   <input type="hidden" name="id_siswa" value="<?= $row->id_siswa ?>">
                   <input class="form-control" type="text" name="nama_siswa" value="<?= $row->nama_siswa ?>" disabled>
-                </td>
-              </tr>
-              <tr>
-                <td>Nomor Induk Siswa Nasional</td>
-                <td>
+              </div>
+
+              <div class="mb-3">
+                  <label class="form-label">Nomor Induk Siswa Nasional :</label>
                   <input class="form-control" type="text" name="nisn_siswa" value="<?= $row->nisn_siswa ?>" disabled>
-                </td>
-              </tr>
-              <tr>
-                <td>Kelas</td>
-                <td>
+              </div>
+
+              <div class="mb-3">
+                  <label class="form-label">Kelas :</label>
                   <input class="form-control" type="text" name="kelas" value="<?= $row->nama_kelas ?>" disabled>
-                </td>
-              </tr>
-              <tr>
-                <td>Password Baru</td>
-                <td>
-                  <input class="form-control" type="text" name="password" value="">
-                </td>
-              </tr>
-            </table>
+              </div>
+
+              <div class="mb-3">
+                  <label class="form-label">Password Baru :</label>
+                  <input class="form-control" type="text" name="password" value="" required>
+              </div>
             <center>
             <input type="submit" name="submit" value="simpan" class="btn btn-primary mt-2 btn-sm">
 

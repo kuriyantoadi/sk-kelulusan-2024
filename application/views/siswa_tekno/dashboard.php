@@ -11,13 +11,15 @@
               <?= $this->session->flashdata('msg') ?>
               <?php foreach ($tampil as $row) { ?>
 
+              <a type="button" class="btn btn-secondary btn-sm mb-3" href="<?= site_url('C_siswa/password_tekno/'.$row->id_siswa); ?>">Password<i class='bx bx-key m-0'></i></a>
               <?php if ($row->status_kelulusan == "LULUS") { ?>
-                <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_siswa/cetak_tekno/'.$row->id_siswa); ?>" >Download Surat Kelulusan<i class='bx bx-cloud-download m-1'></i></a>
+                <a type="button" class="btn btn-success btn-sm mb-3" href="<?= site_url('C_siswa/cetak_tekno/'.$row->id_siswa); ?>" >Surat Kelulusan PDF<i class='bx bx-cloud-download m-0'></i></a>
               <?php }else { ?>
                 <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
               <?php } ?>
 
-              <table class="table table-bordered">
+
+              <table class="table table-bordered table-hover">
                 <tbody>
               <tr>
                 <td>Nama Peserta Didik</td>
@@ -61,7 +63,7 @@
 
               <h5>Nilai Siswa</h5>
 
-              <table style="margin-bottom: 100px" class="table table-bordered">
+              <table style="margin-bottom: 100px" class="table table-bordered table-hover">
                 <tr>
                   <th width="40px"><center>NO.</th>
                   <th width="400px"><center>MATA PELAJARAN</th>

@@ -1,0 +1,6 @@
+__ci_last_regenerate|i:1714331673;siswa|b:1;ses_id|s:1:"8";ses_nisn|s:5:"12345";msg|s:274:"
+						<div class="alert alert-warning border-0 bg-warning alert-dismissible fade show">
+							<div class="text-white">Ubah Password Siswa Berhasil</div>
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+						";__ci_vars|a:1:{s:3:"msg";s:3:"old";}
