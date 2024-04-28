@@ -13,10 +13,10 @@
 
               <?php foreach ($tampil as $row) { ?>
 
-              <a style="margin-bottom: 20px;" type="button" class="btn btn-secondary btn-sm" href="<?= site_url('C_siswa/password_bismen/'.$row->id_siswa); ?>" >Ganti Password<i class='bx bx-key m-1'></i></a>
+              <a style="margin-bottom: 20px;" type="button" class="btn btn-secondary btn-sm" href="<?= site_url('C_siswa/password_bismen/'.$row->id_siswa); ?>" >Password<i class='bx bx-key m-0'></i></a>
               
               <?php if ($row->status_kelulusan == "LULUS") { ?>
-                <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_siswa/cetak_bismen/'.$row->id_siswa); ?>" >Download Surat Kelulusan<i class='bx bx-cloud-download m-1'></i></a>
+                <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_siswa/cetak_bismen/'.$row->id_siswa); ?>" >Surat Kelulusan PDF<i class='bx bx-cloud-download m-0'></i></a>
               <?php }else { ?>
                 <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
               <?php } ?>
