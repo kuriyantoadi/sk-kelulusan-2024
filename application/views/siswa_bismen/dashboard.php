@@ -18,7 +18,7 @@
               <?php if ($row->status_kelulusan == "LULUS") { ?>
                 <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?= site_url('C_siswa/cetak_bismen/'.$row->id_siswa); ?>" >Surat Kelulusan PDF<i class='bx bx-cloud-download m-0'></i></a>
               <?php }else { ?>
-                <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
+                <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan.</p>
               <?php } ?>
 
               <table class="table table-bordered table-hover">
@@ -62,7 +62,9 @@
               
               </table>
 
-            <h5>Nilai Siswa</h5>
+            <?php if ($row->status_kelulusan == "LULUS") { ?>
+
+              <h5>Nilai Siswa</h5>
 
               <table style="margin-bottom: 100px" class="table table-bordered table-hover">
                 <tr>
@@ -170,6 +172,10 @@
                 </tr>
 
               </table>
+
+            <?php } ?>
+
+            
           <?php } ?>
         </div>
       </div>

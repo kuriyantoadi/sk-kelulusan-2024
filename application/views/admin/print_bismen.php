@@ -50,9 +50,9 @@
       Kepala SMK Negeri 1 Kragilan Selaku Ketua Penyelenggara Ujian Sekolah Tahun Pelajaran
       2023/2024 Berdasarkan :
 
-      <br>1. Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013 Revisi
-      <br>2. Kriteria Kelulusan dari Satuan Pendidikan sesuai dengan peraturan perundang-undangan
-      <br>3. Rapat Pleno Dewan Pendidik tentang Kelulusan pada tanggal 03 Mei 2024
+      <br>1. Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013 Revisi.
+      <br>2. Kriteria Kelulusan dari Satuan Pendidikan sesuai dengan peraturan perundang-undangan.
+      <br>3. Rapat Pleno Dewan Pendidik tentang Kelulusan pada tanggal 03 Mei 2024.
       <br>Menerangkan Bahwa :
     </p>
 
