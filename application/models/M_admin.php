@@ -61,6 +61,22 @@ class M_admin extends CI_Model{
     }
   }
 
+  public function siswa_check_tekno($token) {
+    $sql = "SELECT *, (pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + mulok + simdig + fisika + kimia + dasar_program_keahlian + kompetensi_keahlian) / 14 AS nilai_rata 
+            FROM `tb_siswa_tekno` 
+            JOIN `tb_kelas` ON `tb_siswa_tekno`.`id_kelas` = `tb_kelas`.`id_kelas` 
+            JOIN `tb_kompetensi_keahlian` ON `tb_kelas`.`id_kompetensi_keahlian` = `tb_kompetensi_keahlian`.`id_kompetensi_keahlian` 
+            WHERE `token` = $token";
+                
+    $query = $this->db->query($sql, array($token));
+    
+    if ($query->num_rows() > 0) {
+        return $query->result();
+    } else {
+        return array(); // Return an empty array if no records found
+    }
+  }
+
   public function siswa_edit_tekno($id_siswa)
   {
     $this->db->where('id_siswa', $id_siswa);
@@ -124,15 +140,6 @@ class M_admin extends CI_Model{
     $this->db->delete('tb_siswa_bismen');
   }
 
-  // function siswa_detail_bismen($id_siswa){
-  //   $this->db->where('id_siswa', $id_siswa);
-  //   $this->db->select('*, (pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + mulok + simdig + ekonomi_bisnis + administrasi_umum + ipa + dasar_program_keahlian + kompetensi_keahlian ) / 15 AS nilai_rata');
-  //   $this->db->join('tb_kelas', 'tb_siswa_bismen.id_kelas = tb_kelas.id_kelas');
-  //   $this->db->join('tb_kompetensi_keahlian', 'tb_siswa_bismen.id_kompetensi_keahlian = tb_kompetensi_keahlian.id_kompetensi_keahlian');
-  //   $hasil = $this->db->get('tb_siswa_bismen')->result();
-  //   return $hasil;
-  // }
-
   public function siswa_detail_bismen($id_siswa) {
     $sql = "SELECT *, (pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + mulok + simdig + ekonomi_bisnis + administrasi_umum + ipa + dasar_program_keahlian + kompetensi_keahlian ) / 15 AS nilai_rata
             FROM `tb_siswa_bismen`
@@ -141,6 +148,22 @@ class M_admin extends CI_Model{
             WHERE `id_siswa` = $id_siswa";
     
     $query = $this->db->query($sql, array($id_siswa));
+    
+    if ($query->num_rows() > 0) {
+        return $query->result();
+    } else {
+        return array(); // Return an empty array if no records found
+    }
+  }
+
+  public function siswa_check_bismen($token) {
+    $sql = "SELECT *, (pai + pkn + b_ind + mtk + sejindo + b_ing + senbud + pjok + mulok + simdig + ekonomi_bisnis + administrasi_umum + ipa + dasar_program_keahlian + kompetensi_keahlian ) / 15 AS nilai_rata
+            FROM `tb_siswa_bismen`
+            JOIN `tb_kelas` ON `tb_siswa_bismen`.`id_kelas` = `tb_kelas`.`id_kelas`
+            JOIN `tb_kompetensi_keahlian` ON `tb_kelas`.`id_kompetensi_keahlian` = `tb_kompetensi_keahlian`.`id_kompetensi_keahlian`
+            WHERE `tb_siswa_bismen`.`token` = $token ";
+    
+    $query = $this->db->query($sql, array($token));
     
     if ($query->num_rows() > 0) {
         return $query->result();
