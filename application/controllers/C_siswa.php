@@ -73,8 +73,22 @@ class C_siswa extends CI_Controller {
 
   public function cetak_tekno()
   {
-    $ses_id = $this->session->userdata('ses_id');
-    $data['tampil'] = $this->M_admin->siswa_detail_tekno($ses_id);
+    $id_siswa = $this->session->userdata('ses_id');
+		$v_token = $this->M_admin->siswa_detail_tekno($id_siswa);
+
+		foreach ($v_token as $cek_token):
+			$id_token = $cek_token->token;
+		endforeach;
+
+		// awal proses QR
+		$qr['data'] = 'https:skl2024.smkn1kragilan.sch.id/check/tekno/'.$id_token;
+        $qr['level'] = 'H';
+        $qr['size'] = 2;
+        $qr['savename'] = FCPATH.'assets/qr/qr-'.$id_token.'.png'; // Menyimpan gambar di assets/qr
+        $this->ciqrcode->generate($qr);
+        $data['qr_image'] = base_url().'assets/qr/qr-'.$id_token.'.png'; // Mengirim URL gambar ke view
+
+		$data['tampil'] = $this->M_admin->siswa_print_tekno($id_siswa);
 
     $this->load->view('admin/print_tekno', $data);
     
@@ -104,8 +118,23 @@ class C_siswa extends CI_Controller {
 
     public function cetak_bismen()
     {
-      $ses_id = $this->session->userdata('ses_id');
-      $data['tampil'] = $this->M_admin->siswa_detail_bismen($ses_id);
+      // cek token
+      $id_siswa = $this->session->userdata('ses_id');
+      $v_token = $this->M_admin->siswa_detail_bismen($id_siswa);
+
+      foreach ($v_token as $cek_token):
+        $id_token = $cek_token->token;
+      endforeach;
+
+      // awal proses QR
+      $qr['data'] = 'https:skl2024.smkn1kragilan.sch.id/check/bismen/'.$id_token;
+          $qr['level'] = 'H';
+          $qr['size'] = 2;
+          $qr['savename'] = FCPATH.'assets/qr/qr-'.$id_token.'.png'; // Menyimpan gambar di assets/qr
+          $this->ciqrcode->generate($qr);
+          $data['qr_image'] = base_url().'assets/qr/qr-'.$id_token.'.png'; // Mengirim URL gambar ke view
+
+      $data['tampil'] = $this->M_admin->print_bismen($id_siswa);
 
       $this->load->view('admin/print_bismen', $data);
     }
