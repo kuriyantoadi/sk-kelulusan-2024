@@ -79,7 +79,7 @@
       </tr>
       <tr>
         <td>Tempat, Tanggal Lahir</td>
-        <td>: <?= $row->tempat_lahir.' ,'. $row->tgl_lahir ?></td>
+        <td>: <?= $row->tempat_lahir.', '. $row->tgl_lahir ?></td>
       </tr>
       <tr>
         <td>Nama Orang Tua / Wali</td>
