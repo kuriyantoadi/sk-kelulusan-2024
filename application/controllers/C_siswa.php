@@ -9,6 +9,9 @@ class C_siswa extends CI_Controller {
 			$this->load->model('M_login');
       $this->load->model('M_admin');
 
+      // qrcode
+      $this->load->library('ciqrcode');
+
       // session login
 			if ($this->session->userdata('siswa') != true) {
 				$url = base_url('Login');

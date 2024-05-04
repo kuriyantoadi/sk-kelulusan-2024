@@ -9,6 +9,9 @@ class C_admin extends CI_Controller
 		parent::__construct();
 		$this->load->model('M_admin');
 
+		// qrcode
+      	$this->load->library('ciqrcode');
+
 		// session login
 		if ($this->session->userdata('aktif') != true) {
 			$url = base_url('Login/fa');
@@ -154,6 +157,26 @@ class C_admin extends CI_Controller
 
 	public function siswa_print_tekno($id_siswa)
 	{
+		// cek token
+		$v_token = $this->M_admin->siswa_detail_tekno($id_siswa);
+
+		foreach ($v_token as $cek_token):
+			$id_token = $cek_token->token;
+		endforeach;
+
+		// awal proses QR
+		$qr['data'] = 'https:skl2024.smkn1kragilan.sch.id/check/tekno/'.$id_token;
+        $qr['level'] = 'H';
+        $qr['size'] = 2;
+        $qr['savename'] = FCPATH.'assets/qr/qr-'.$id_token.'.png'; // Menyimpan gambar di assets/qr
+        $this->ciqrcode->generate($qr);
+
+        $data['qr_image'] = base_url().'assets/qr/qr-'.$id_token.'.png'; // Mengirim URL gambar ke view
+
+		// var_dump($data['qr_image']);
+        // $this->load->view('barcode_view', $data); // Memuat view untuk menampilkan gambar QR
+		// akhir proses QR
+
 		$data['tampil'] = $this->M_admin->siswa_print_tekno($id_siswa);
 		$this->load->view('admin/print_tekno', $data);
 	}
