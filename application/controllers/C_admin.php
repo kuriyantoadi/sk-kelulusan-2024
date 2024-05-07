@@ -179,19 +179,20 @@ class C_admin extends CI_Controller
 	public function siswa_edit_up_tekno()
 	{
 		// tarik data dari post
-		$tgl_lahir_post = $this->input->post('tgl_lahir');
+		// $tgl_lahir_post = $this->input->post('tgl_lahir');
 
 		// Ubah format tanggal ke timestamp
-		$timestamp = strtotime($tgl_lahir_post);
+		// $timestamp = strtotime($tgl_lahir_post);
 
 		// Ubah format timestamp ke format "dd/mm/yyyy"
-		$tgl_lahir = date("d/m/Y", $timestamp);
+		// $tgl_lahir = date("d/m/Y", $timestamp);
 
 		$id_siswa = $this->input->post('id_siswa');
 		$nis_siswa = $this->input->post('nis_siswa');
 		$nisn_siswa = $this->input->post('nisn_siswa');
 		$nama_siswa = $this->input->post('nama_siswa');
 		$tempat_lahir = $this->input->post('tempat_lahir');
+		$tgl_lahir = $this->input->post('tgl_lahir');
 		$nama_org_tua = $this->input->post('nama_org_tua');
 		$status_kelulusan = $this->input->post('status_kelulusan');
 		$pai = $this->input->post('pai');
@@ -446,19 +447,20 @@ class C_admin extends CI_Controller
 	public function siswa_edit_up_bismen()
 	{
 		// tarik data dari post
-		$tgl_lahir_post = $this->input->post('tgl_lahir');
+		// $tgl_lahir_post = $this->input->post('tgl_lahir');
 
 		// Ubah format tanggal ke timestamp
-		$timestamp = strtotime($tgl_lahir_post);
+		// $timestamp = strtotime($tgl_lahir_post);
 
 		// Ubah format timestamp ke format "dd/mm/yyyy"
-		$tgl_lahir = date("d/m/Y", $timestamp);
+		// $tgl_lahir = date("d/m/Y", $timestamp);
 
 		$id_siswa = $this->input->post('id_siswa');
 		$nis_siswa = $this->input->post('nis_siswa');
 		$nisn_siswa = $this->input->post('nisn_siswa');
 		$nama_siswa = $this->input->post('nama_siswa');
 		$tempat_lahir = $this->input->post('tempat_lahir');
+		$tgl_lahir = $this->input->post('tgl_lahir');
 		$nama_org_tua = $this->input->post('nama_org_tua');
 		$status_kelulusan = $this->input->post('status_kelulusan');
 		$pai = $this->input->post('pai');
